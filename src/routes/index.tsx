@@ -52,9 +52,9 @@ const proof = [
 ];
 
 const how = [
-  { word: "Reliable", line: "[LINE FOR \u201cRELIABLE\u201d]" },
-  { word: "Direct", line: "[LINE FOR \u201cDIRECT\u201d]" },
-  { word: "Vibrant", line: "Vibrant not just in colour, but in sound." },
+  { word: "Reliable", line: "Reliable not just in deadlines, but in every frame that ships on brief." },
+  { word: "Direct", line: "Direct not just in words, but in how fast an idea becomes a finished animation." },
+  { word: "Vibrant", line: "Vibrant not just in color, but in sound." },
 ];
 
 function Index() {
