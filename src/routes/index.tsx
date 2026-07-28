@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { AkMark, NameMark } from "@/components/AkMark";
+import { AkLockup } from "@/components/AkLockup";
 import { MediaSlot } from "@/components/MediaSlot";
 import reelHero from "@/assets/reel-hero.jpg";
 import workAnaheim from "@/assets/work-anaheim.jpg";
@@ -61,9 +61,9 @@ function Index() {
   return (
     <main className="min-h-screen bg-background text-foreground">
       {/* 1. HERO */}
-      <section className="mx-auto w-full max-w-6xl px-6 pt-8 pb-20 sm:px-10 sm:pt-10 md:pb-32">
-        <header className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-4">
-          <AkMark size={34} />
+      <section className="mx-auto w-full max-w-6xl px-6 pt-14 pb-20 sm:px-10 sm:pt-16 md:pb-32">
+        <header className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
+          <AkLockup size="lg" />
           <span className="text-[0.6rem] tracking-caps text-muted-foreground uppercase sm:text-[0.68rem]">
             Graphic + Motion Designer
           </span>
@@ -81,7 +81,7 @@ function Index() {
           />
         </div>
 
-        <h1 className="reveal mt-10 max-w-4xl text-[2rem] leading-[1.08] font-semibold tracking-[-0.03em] text-balance sm:mt-14 sm:text-5xl md:text-6xl">
+        <h1 className="reveal mt-10 max-w-4xl text-[2rem] leading-[1.08] tracking-[-0.01em] text-balance sm:mt-14 sm:text-5xl md:text-6xl">
           I turn brand and product stories into short animations with rhythm,
           colour, and substance.
         </h1>
@@ -92,7 +92,7 @@ function Index() {
         <p className="text-[0.6rem] tracking-caps text-muted-foreground uppercase sm:text-[0.68rem]">
           Who I am
         </p>
-        <p className="mt-8 max-w-3xl text-xl leading-[1.45] font-medium tracking-[-0.015em] text-pretty sm:text-2xl md:text-3xl">
+        <p className="mt-8 max-w-3xl text-xl leading-[1.45] font-normal tracking-[-0.005em] text-pretty sm:text-2xl md:text-3xl">
           Graphic designer with roots in art and illustration, now motion
           designer at Seibert Group, an Atlassian partner in Germany.
           <span className="block text-muted-foreground">
@@ -118,7 +118,7 @@ function Index() {
                 height={912}
                 ratio="4 / 3"
               />
-              <h2 className="mt-5 text-lg font-semibold tracking-[-0.02em]">
+              <h2 className="mt-5 text-xl tracking-[0.01em]">
                 {item.title}
               </h2>
               <p className="mt-2 text-[0.95rem] leading-relaxed text-muted-foreground text-pretty">
@@ -137,7 +137,7 @@ function Index() {
         <div className="mt-10 grid gap-10 border-t border-border pt-10 md:grid-cols-3 md:gap-8">
           {how.map((item) => (
             <div key={item.word}>
-              <h2 className="text-3xl font-bold tracking-[-0.03em] sm:text-4xl">
+              <h2 className="text-3xl tracking-[0.01em] sm:text-4xl">
                 {item.word}
               </h2>
               <p className="mt-3 max-w-xs text-[0.95rem] leading-relaxed text-muted-foreground text-pretty">
@@ -151,9 +151,8 @@ function Index() {
       {/* 5. CONTACT */}
       <section className="mt-10 py-24 md:py-32" style={{ background: "var(--ink)" }}>
         <div className="mx-auto w-full max-w-6xl px-6 sm:px-10">
-          <AkMark size={40} tone="dark" />
           <h2
-            className="mt-10 max-w-3xl text-[1.9rem] leading-[1.12] font-semibold tracking-[-0.03em] text-balance sm:text-5xl"
+            className="max-w-3xl text-[1.9rem] leading-[1.12] tracking-[-0.01em] text-balance sm:text-5xl"
             style={{ color: "var(--background)" }}
           >
             Looking for a reliable animator for your next project?
@@ -178,10 +177,10 @@ function Index() {
           </p>
 
           <div className="mt-16">
-            <NameMark size={92} tone="dark" />
+            <AkLockup size="lg" tone="dark" />
           </div>
           <p
-            className="mt-3 text-[0.6rem] tracking-caps uppercase"
+            className="mt-6 text-[0.6rem] tracking-caps uppercase"
             style={{ color: "oklch(1 0 0 / 45%)" }}
           >
             Graphic + Motion Designer
