@@ -14,7 +14,7 @@ type Props = {
 export function AkMark({ size = 48, tone = "light", className = "" }: Props) {
   return (
     <span
-      className={`relative inline-block leading-none select-none ${className}`}
+      className={`relative inline-block w-fit justify-self-start leading-none select-none ${className}`}
       style={{ fontSize: size }}
       aria-hidden="true"
     >
