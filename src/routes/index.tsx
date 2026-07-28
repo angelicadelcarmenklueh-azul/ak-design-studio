@@ -128,11 +128,8 @@ function Index() {
       </section>
 
       {/* 5. CONTACT */}
-      <section
-        className="mt-10 px-6 py-24 sm:px-10 md:py-32"
-        style={{ background: "var(--ink)" }}
-      >
-        <div className="mx-auto w-full max-w-6xl">
+      <section className="mt-10 py-24 md:py-32" style={{ background: "var(--ink)" }}>
+        <div className="mx-auto w-full max-w-6xl px-6 sm:px-10">
           <AkMark size={40} tone="dark" />
           <h2
             className="mt-10 max-w-3xl text-[1.9rem] leading-[1.12] font-semibold tracking-[-0.03em] text-balance sm:text-5xl"

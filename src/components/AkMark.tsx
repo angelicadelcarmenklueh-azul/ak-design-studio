@@ -61,7 +61,7 @@ export function KluhWord({ tone = "light" }: { tone?: "light" | "dark" }) {
       </span>
       <span
         className="absolute flex"
-        style={{ gap: "0.06em", top: "-0.04em", left: "0.42em" }}
+        style={{ gap: "0.06em", top: "-0.02em", left: "0.46em" }}
       >
         <span
           className="block rounded-full"
