@@ -2,6 +2,11 @@ type Props = {
   /** Placeholder label, shown when no src is provided. Keep the [ ] marker. */
   label: string;
   src?: string;
+  /** Static artwork shown when there is no video yet. */
+  image?: string;
+  alt?: string;
+  width?: number;
+  height?: number;
   poster?: string;
   ratio?: string;
   tone?: "light" | "dark";
@@ -15,6 +20,10 @@ type Props = {
 export function MediaSlot({
   label,
   src,
+  image,
+  alt,
+  width,
+  height,
   poster,
   ratio = "16 / 9",
   tone = "light",
@@ -30,6 +39,21 @@ export function MediaSlot({
         loop
         playsInline
         preload={priority ? "auto" : "none"}
+        className="h-full w-full rounded-2xl object-cover"
+        style={{ aspectRatio: ratio }}
+      />
+    );
+  }
+
+  if (image) {
+    return (
+      <img
+        src={image}
+        alt={alt ?? ""}
+        width={width}
+        height={height}
+        loading={priority ? "eager" : "lazy"}
+        decoding="async"
         className="h-full w-full rounded-2xl object-cover"
         style={{ aspectRatio: ratio }}
       />
