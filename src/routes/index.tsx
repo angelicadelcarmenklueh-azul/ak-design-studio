@@ -93,7 +93,7 @@ function Index() {
           Who I am
         </p>
         <p className="mt-8 max-w-3xl text-xl leading-[1.45] font-medium tracking-[-0.015em] text-pretty sm:text-2xl md:text-3xl">
-          Graphic designer with roots in fashion illustration, now motion
+          Graphic designer with roots in art and illustration, now motion
           designer at Seibert Group, an Atlassian partner in Germany.
           <span className="block text-muted-foreground">
             Currently opening up space for freelance work with animation and
