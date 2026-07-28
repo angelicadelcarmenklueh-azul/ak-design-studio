@@ -151,9 +151,8 @@ function Index() {
       {/* 5. CONTACT */}
       <section className="mt-10 py-24 md:py-32" style={{ background: "var(--ink)" }}>
         <div className="mx-auto w-full max-w-6xl px-6 sm:px-10">
-          <AkLockup size="sm" tone="dark" />
           <h2
-            className="mt-10 max-w-3xl text-[1.9rem] leading-[1.12] tracking-[-0.01em] text-balance sm:text-5xl"
+            className="max-w-3xl text-[1.9rem] leading-[1.12] tracking-[-0.01em] text-balance sm:text-5xl"
             style={{ color: "var(--background)" }}
           >
             Looking for a reliable animator for your next project?
@@ -181,7 +180,7 @@ function Index() {
             <AkLockup size="lg" tone="dark" />
           </div>
           <p
-            className="mt-3 text-[0.6rem] tracking-caps uppercase"
+            className="mt-6 text-[0.6rem] tracking-caps uppercase"
             style={{ color: "oklch(1 0 0 / 45%)" }}
           >
             Graphic + Motion Designer
