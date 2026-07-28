@@ -61,7 +61,7 @@ function Index() {
   return (
     <main className="min-h-screen bg-background text-foreground">
       {/* 1. HERO */}
-      <section className="mx-auto w-full max-w-6xl px-6 pt-8 pb-20 sm:px-10 sm:pt-10 md:pb-32">
+      <section className="mx-auto w-full max-w-6xl px-6 pt-14 pb-20 sm:px-10 sm:pt-16 md:pb-32">
         <header className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <AkLockup size="lg" />
           <span className="text-[0.6rem] tracking-caps text-muted-foreground uppercase sm:text-[0.68rem]">
