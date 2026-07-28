@@ -1,6 +1,10 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AkMark, NameMark } from "@/components/AkMark";
 import { MediaSlot } from "@/components/MediaSlot";
+import reelHero from "@/assets/reel-hero.jpg";
+import workAnaheim from "@/assets/work-anaheim.jpg";
+import workSeasonal from "@/assets/work-seasonal.jpg";
+import workAnxiety from "@/assets/work-anxiety.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -25,17 +29,23 @@ export const Route = createFileRoute("/")({
 const proof = [
   {
     label: "[VIDEO/IMAGE OF THE ANAHEIM PROJECT]",
+    image: workAnaheim,
+    alt: "Cut-paper collage of a speaker on stage with a pink starburst and blue lightning bolt",
     title: "Atlassian, Anaheim",
     lines:
       "A video made for Atlassian and presented in Anaheim. Teams in France, Austria and Denmark later asked to replicate it.",
   },
   {
     label: "[VIDEO/IMAGE OF THE SEASONAL ANIMATIONS]",
+    image: workSeasonal,
+    alt: "Cut-paper collage of seasonal leaves, flowers and sun rays in brand colours",
     title: "Seasonal concept",
     lines: "A seasonal animation concept that grew followers — and sales.",
   },
   {
     label: "[VIDEO/IMAGE OF THE APP ANIMATION]",
+    image: workAnxiety,
+    alt: "Cut-paper collage of a calm figure surrounded by concentric coloured ripples",
     title: "Anxiety app",
     lines: "An animation for an anxiety app — motion with a social purpose.",
   },
@@ -62,6 +72,10 @@ function Index() {
         <div className="reveal mt-10 sm:mt-14">
           <MediaSlot
             label="[VIDEO/REEL FILE — personal reel, autoplay, muted, loop]"
+            image={reelHero}
+            alt="Cut-paper collage of bold organic shapes in pink, green, blue and yellow"
+            width={1600}
+            height={1008}
             ratio="16 / 10"
             priority
           />
@@ -96,7 +110,14 @@ function Index() {
         <div className="mt-10 grid gap-12 md:grid-cols-3 md:gap-8">
           {proof.map((item) => (
             <article key={item.title}>
-              <MediaSlot label={item.label} ratio="4 / 3" />
+              <MediaSlot
+                label={item.label}
+                image={item.image}
+                alt={item.alt}
+                width={1200}
+                height={912}
+                ratio="4 / 3"
+              />
               <h2 className="mt-5 text-lg font-semibold tracking-[-0.02em]">
                 {item.title}
               </h2>
