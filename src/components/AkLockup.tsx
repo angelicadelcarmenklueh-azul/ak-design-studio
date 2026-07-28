@@ -29,9 +29,9 @@ export function AkLockup({
 
   return (
     <div className={`flex flex-col items-start ${className}`} style={{ color }}>
-      <span className="relative inline-block">
+      <span className={`relative inline-block font-display ${akClass}`}>
         <span
-          className={`font-display font-normal ${akClass}`}
+          className="font-normal"
           style={{
             WebkitTextStroke: "0.035em currentColor",
             letterSpacing: "-0.01em",
