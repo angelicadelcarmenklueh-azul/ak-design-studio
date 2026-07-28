@@ -25,7 +25,7 @@ export function AkLockup({
     size === "lg"
       ? "text-2xl sm:text-4xl md:text-5xl"
       : "text-base sm:text-lg";
-  const dotSize = size === "lg" ? "0.14em" : "0.16em";
+  const dotSize = size === "lg" ? "0.17em" : "0.19em";
 
   return (
     <div className={`flex flex-col items-start ${className}`} style={{ color }}>
@@ -33,7 +33,7 @@ export function AkLockup({
         <span
           className={`font-display font-normal ${akClass}`}
           style={{
-            WebkitTextStroke: "0.022em currentColor",
+            WebkitTextStroke: "0.035em currentColor",
             letterSpacing: "-0.01em",
           }}
         >
@@ -41,8 +41,8 @@ export function AkLockup({
         </span>
         <span
           aria-hidden
-          className="absolute flex gap-[0.5em]"
-          style={{ top: "-0.02em", right: "0.06em", fontSize: "inherit" }}
+          className="absolute flex items-center gap-[0.09em]"
+          style={{ top: "-0.1em", right: "-0.02em", fontSize: "inherit" }}
         >
           <span
             className="block rounded-full"
