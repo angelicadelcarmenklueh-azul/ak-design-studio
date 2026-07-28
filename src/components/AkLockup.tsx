@@ -1,0 +1,74 @@
+type Tone = "light" | "dark";
+
+const toneColor = (tone: Tone) =>
+  tone === "dark" ? "var(--background)" : "var(--ink)";
+
+/**
+ * Typographic AK lockup: "AK" set in Poiret One (faux-bold via text-stroke)
+ * with the brand pink + green dots, plus the full "Angelica Klüh" name.
+ */
+export function AkLockup({
+  tone = "light",
+  className = "",
+  size = "lg",
+}: {
+  tone?: Tone;
+  className?: string;
+  size?: "sm" | "lg";
+}) {
+  const color = toneColor(tone);
+  const akClass =
+    size === "lg"
+      ? "text-[5.5rem] leading-[0.85] sm:text-[8rem] md:text-[10rem]"
+      : "text-[2.5rem] leading-[0.85]";
+  const nameClass =
+    size === "lg"
+      ? "text-2xl sm:text-4xl md:text-5xl"
+      : "text-base sm:text-lg";
+  const dotSize = size === "lg" ? "0.14em" : "0.16em";
+
+  return (
+    <div className={`flex flex-col items-start ${className}`} style={{ color }}>
+      <span className="relative inline-block">
+        <span
+          className={`font-display font-normal ${akClass}`}
+          style={{
+            WebkitTextStroke: "0.022em currentColor",
+            letterSpacing: "-0.01em",
+          }}
+        >
+          AK
+        </span>
+        <span
+          aria-hidden
+          className="absolute flex gap-[0.5em]"
+          style={{ top: "-0.02em", right: "0.06em", fontSize: "inherit" }}
+        >
+          <span
+            className="block rounded-full"
+            style={{
+              width: dotSize,
+              height: dotSize,
+              background: "var(--dot-pink)",
+            }}
+          />
+          <span
+            className="block rounded-full"
+            style={{
+              width: dotSize,
+              height: dotSize,
+              background: "var(--dot-green)",
+            }}
+          />
+        </span>
+      </span>
+
+      <span
+        className={`font-display mt-2 block ${nameClass}`}
+        style={{ letterSpacing: "0.02em" }}
+      >
+        Angelica Klüh
+      </span>
+    </div>
+  );
+}
