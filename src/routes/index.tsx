@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { AkMark, KluhWord } from "@/components/AkMark";
+import { AkMark, NameMark } from "@/components/AkMark";
 import { MediaSlot } from "@/components/MediaSlot";
 
 export const Route = createFileRoute("/")({
@@ -156,12 +156,8 @@ function Index() {
             [SOCIAL LINKS - OPTIONAL: Instagram / Behance / LinkedIn]
           </p>
 
-          <div
-            className="mt-16 flex flex-wrap items-baseline gap-x-3 gap-y-1 text-2xl font-bold tracking-[-0.03em] sm:text-3xl"
-            style={{ color: "var(--background)" }}
-          >
-            <span>Angelica</span>
-            <KluhWord tone="dark" />
+          <div className="mt-16">
+            <NameMark size={92} tone="dark" />
           </div>
           <p
             className="mt-3 text-[0.6rem] tracking-caps uppercase"
