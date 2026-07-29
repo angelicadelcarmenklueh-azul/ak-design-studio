@@ -70,6 +70,7 @@ function Index() {
         </header>
 
         <div className="reveal mt-10 sm:mt-14">
+          <div className="wiggle" style={{ animationDuration: "12s" }}>
           <MediaSlot
             label="[VIDEO/REEL FILE — personal reel, autoplay, muted, loop]"
             image={reelHero}
@@ -79,6 +80,7 @@ function Index() {
             ratio="16 / 10"
             priority
           />
+          </div>
         </div>
 
         <h1 className="reveal mt-10 max-w-4xl text-[2rem] leading-[1.08] tracking-[-0.01em] text-balance sm:mt-14 sm:text-5xl md:text-6xl">
@@ -89,9 +91,9 @@ function Index() {
 
       {/* 2. WHO I AM */}
       <section className="mx-auto w-full max-w-6xl px-6 py-20 sm:px-10 md:py-28">
-        <p className="text-[0.6rem] tracking-caps text-muted-foreground uppercase sm:text-[0.68rem]">
+        <h2 className="display-bold text-3xl tracking-[0.01em] sm:text-4xl">
           Who I am
-        </p>
+        </h2>
         <p className="mt-8 max-w-3xl text-xl leading-[1.45] font-normal tracking-[-0.005em] text-pretty sm:text-2xl md:text-3xl">
           Graphic designer with roots in art and illustration, now motion
           designer at Seibert Group, an Atlassian partner in Germany.
@@ -104,23 +106,31 @@ function Index() {
 
       {/* 3. PROOF */}
       <section className="mx-auto w-full max-w-6xl px-6 py-20 sm:px-10 md:py-28">
-        <p className="text-[0.6rem] tracking-caps text-muted-foreground uppercase sm:text-[0.68rem]">
+        <h2 className="display-bold text-3xl tracking-[0.01em] sm:text-4xl">
           Proof
-        </p>
+        </h2>
         <div className="mt-10 grid gap-12 md:grid-cols-3 md:gap-8">
-          {proof.map((item) => (
+          {proof.map((item, i) => (
             <article key={item.title}>
-              <MediaSlot
-                label={item.label}
-                image={item.image}
-                alt={item.alt}
-                width={1200}
-                height={912}
-                ratio="4 / 3"
-              />
-              <h2 className="mt-5 text-xl tracking-[0.01em]">
+              <div
+                className="wiggle"
+                style={{
+                  animationDuration: `${10 + i * 1.7}s`,
+                  animationDelay: `${-2.3 * (i + 1)}s`,
+                }}
+              >
+                <MediaSlot
+                  label={item.label}
+                  image={item.image}
+                  alt={item.alt}
+                  width={1200}
+                  height={912}
+                  ratio="4 / 3"
+                />
+              </div>
+              <h3 className="display-bold mt-5 text-xl tracking-[0.01em]">
                 {item.title}
-              </h2>
+              </h3>
               <p className="mt-2 text-[0.95rem] leading-relaxed text-muted-foreground text-pretty">
                 {item.lines}
               </p>
@@ -131,15 +141,15 @@ function Index() {
 
       {/* 4. HOW I WORK */}
       <section className="mx-auto w-full max-w-6xl px-6 py-20 sm:px-10 md:py-28">
-        <p className="text-[0.6rem] tracking-caps text-muted-foreground uppercase sm:text-[0.68rem]">
+        <h2 className="display-bold text-3xl tracking-[0.01em] sm:text-4xl">
           How I work
-        </p>
+        </h2>
         <div className="mt-10 grid gap-10 border-t border-border pt-10 md:grid-cols-3 md:gap-8">
           {how.map((item) => (
             <div key={item.word}>
-              <h2 className="text-3xl tracking-[0.01em] sm:text-4xl">
+              <h3 className="display-bold text-3xl tracking-[0.01em] sm:text-4xl">
                 {item.word}
-              </h2>
+              </h3>
               <p className="mt-3 max-w-xs text-[0.95rem] leading-relaxed text-muted-foreground text-pretty">
                 {item.line}
               </p>
@@ -152,7 +162,7 @@ function Index() {
       <section className="mt-10 py-24 md:py-32" style={{ background: "var(--ink)" }}>
         <div className="mx-auto w-full max-w-6xl px-6 sm:px-10">
           <h2
-            className="max-w-3xl text-[1.9rem] leading-[1.12] tracking-[-0.01em] text-balance sm:text-5xl"
+            className="display-bold max-w-4xl text-[2rem] leading-[1.08] tracking-[-0.01em] text-balance sm:text-5xl md:text-6xl"
             style={{ color: "var(--background)" }}
           >
             Looking for a reliable animator for your next project?
