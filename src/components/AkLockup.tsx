@@ -1,3 +1,5 @@
+import { PinkDot, GreenDot } from "@/components/BrandDots";
+
 type Tone = "light" | "dark";
 
 const toneColor = (tone: Tone) =>
@@ -44,21 +46,15 @@ export function AkLockup({
           className="absolute flex items-center gap-[0.09em]"
           style={{ top: "-0.1em", right: "-0.02em", fontSize: "inherit" }}
         >
-          <span
-            className="block rounded-full"
-            style={{
-              width: dotSize,
-              height: dotSize,
-              background: "var(--dot-pink)",
-            }}
+          <PinkDot
+            size={dotSize}
+            className="dot-wiggle"
+            style={{ animationDuration: "7.3s", animationDelay: "-1.1s" }}
           />
-          <span
-            className="block rounded-full"
-            style={{
-              width: dotSize,
-              height: dotSize,
-              background: "var(--dot-green)",
-            }}
+          <GreenDot
+            size={dotSize}
+            className="dot-wiggle"
+            style={{ animationDuration: "9.1s", animationDelay: "-3.4s" }}
           />
         </span>
       </span>

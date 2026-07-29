@@ -175,6 +175,70 @@
   letter-spacing: 0.22em;
 }
 
+/* Faux-bold for Poiret One (single weight typeface) */
+@utility display-bold {
+  font-family: var(--font-display);
+  font-weight: 400;
+  -webkit-text-stroke: 0.028em currentColor;
+  paint-order: stroke fill;
+}
+
+@keyframes wiggle-float {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  20% {
+    transform: translate3d(0.6%, -1.4%, 0) rotate(0.7deg);
+  }
+  40% {
+    transform: translate3d(-0.8%, -0.5%, 0) rotate(-0.6deg);
+  }
+  60% {
+    transform: translate3d(0.4%, 1.2%, 0) rotate(0.5deg);
+  }
+  80% {
+    transform: translate3d(-0.5%, 0.4%, 0) rotate(-0.4deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+}
+
+@utility wiggle {
+  animation: wiggle-float 9s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes dot-wiggle {
+  0% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+  25% {
+    transform: translate3d(3%, -7%, 0) rotate(4deg);
+  }
+  50% {
+    transform: translate3d(-4%, -3%, 0) rotate(-3deg);
+  }
+  75% {
+    transform: translate3d(2%, 5%, 0) rotate(3deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate(0deg);
+  }
+}
+
+@utility dot-wiggle {
+  animation: dot-wiggle 6.5s ease-in-out infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wiggle,
+  .dot-wiggle {
+    animation: none !important;
+  }
+}
+
 @utility reveal {
   opacity: 0;
   transform: translateY(24px);
