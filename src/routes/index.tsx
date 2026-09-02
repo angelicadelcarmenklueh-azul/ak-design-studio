@@ -9,13 +9,13 @@ import workAnxiety from "@/assets/work-anxiety.jpg";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Angelica Klüh — Graphic + Motion Designer" },
+      { title: "Angelica Klüh — Motion Graphic Designer | Visual Storytelling & AI" },
       {
         name: "description",
         content:
           "Motion designer at Seibert Group, with roots in fashion illustration. Short animations with rhythm, colour and substance.",
       },
-      { property: "og:title", content: "Angelica Klüh — Graphic + Motion Designer" },
+      { property: "og:title", content: "Angelica Klüh — Motion Graphic Designer | Visual Storytelling & AI" },
       {
         property: "og:description",
         content:
@@ -65,7 +65,7 @@ function Index() {
         <header className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <AkLockup size="lg" />
           <span className="text-[0.6rem] tracking-caps text-muted-foreground uppercase sm:text-[0.68rem]">
-            Graphic + Motion Designer
+            Motion Graphic Designer | Visual Storytelling & AI
           </span>
         </header>
 
@@ -184,7 +184,7 @@ function Index() {
             className="mt-6 text-[0.6rem] tracking-caps uppercase"
             style={{ color: "oklch(1 0 0 / 45%)" }}
           >
-            Graphic + Motion Designer
+            Motion Graphic Designer | Visual Storytelling & AI
           </p>
         </div>
       </section>
