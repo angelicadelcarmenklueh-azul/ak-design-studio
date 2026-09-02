@@ -108,24 +108,16 @@ function Index() {
           Proof
         </h2>
         <div className="mt-10 grid gap-12 md:grid-cols-3 md:gap-8">
-          {proof.map((item, i) => (
+          {proof.map((item) => (
             <article key={item.title}>
-              <div
-                className="wiggle"
-                style={{
-                  animationDuration: `${10 + i * 1.7}s`,
-                  animationDelay: `${-2.3 * (i + 1)}s`,
-                }}
-              >
-                <MediaSlot
-                  label={item.label}
-                  image={item.image}
-                  alt={item.alt}
-                  width={1200}
-                  height={912}
-                  ratio="4 / 3"
-                />
-              </div>
+              <MediaSlot
+                label={item.label}
+                image={item.image}
+                alt={item.alt}
+                width={1200}
+                height={912}
+                ratio="4 / 3"
+              />
               <h3 className="display-bold mt-5 text-xl tracking-[0.01em]">
                 {item.title}
               </h3>
