@@ -70,7 +70,6 @@ function Index() {
         </header>
 
         <div className="reveal mt-10 sm:mt-14">
-          <div className="wiggle" style={{ animationDuration: "12s" }}>
           <MediaSlot
             label="[VIDEO/REEL FILE — personal reel, autoplay, muted, loop]"
             image={reelHero}
@@ -80,7 +79,6 @@ function Index() {
             ratio="16 / 10"
             priority
           />
-          </div>
         </div>
 
         <h1 className="reveal mt-10 max-w-4xl text-[2rem] leading-[1.08] tracking-[-0.01em] text-balance sm:mt-14 sm:text-5xl md:text-6xl">
