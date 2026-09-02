@@ -93,11 +93,12 @@ function Index() {
           Who I am
         </h2>
         <p className="mt-8 max-w-3xl text-xl leading-[1.45] font-normal tracking-[-0.005em] text-pretty sm:text-2xl md:text-3xl">
-          Graphic designer with roots in art and illustration, now motion
-          designer at Seibert Group, an Atlassian partner in Germany.
+          Graphic designer with roots in art and illustration, now working in
+          motion design — from brand videos to interactive product animation.
+          Increasingly building with AI-assisted workflows.
           <span className="block text-muted-foreground">
-            Currently opening up space for freelance work with animation and
-            advertising agencies.
+            Currently open to new opportunities, in-house or freelance, with
+            teams who care about story as much as motion.
           </span>
         </p>
       </section>
@@ -155,7 +156,7 @@ function Index() {
             className="display-bold max-w-4xl text-[2rem] leading-[1.08] tracking-[-0.01em] text-balance sm:text-5xl md:text-6xl"
             style={{ color: "var(--background)" }}
           >
-            Looking for a reliable animator for your next project?
+            Open to new projects and opportunities — freelance or full-time.
           </h2>
 
           <a
