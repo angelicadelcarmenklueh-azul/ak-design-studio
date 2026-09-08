@@ -1,3 +1,6 @@
+import { useRef, useState } from "react";
+import { Volume2, VolumeX } from "lucide-react";
+
 type Props = {
   /** Placeholder label, shown when no src is provided. Keep the [ ] marker. */
   label: string;
@@ -29,19 +32,36 @@ export function MediaSlot({
   tone = "light",
   priority = false,
 }: Props) {
+  const [muted, setMuted] = useState(true);
+
   if (src) {
     return (
-      <video
-        src={src}
-        poster={poster}
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload={priority ? "auto" : "none"}
-        className="h-full w-full rounded-2xl object-cover"
-        style={{ aspectRatio: ratio }}
-      />
+      <div className="relative">
+        <video
+          src={src}
+          poster={poster}
+          autoPlay
+          muted={muted}
+          loop
+          playsInline
+          preload={priority ? "auto" : "none"}
+          className="h-full w-full rounded-2xl object-cover"
+          style={{ aspectRatio: ratio }}
+        />
+        <button
+          type="button"
+          onClick={() => setMuted((m) => !m)}
+          aria-label={muted ? "Unmute video" : "Mute video"}
+          className="absolute bottom-4 right-4 flex h-9 w-9 items-center justify-center rounded-full backdrop-blur transition-opacity hover:opacity-80"
+          style={{ background: "oklch(0.183 0 0 / 55%)" }}
+        >
+          {muted ? (
+            <VolumeX className="h-4 w-4" style={{ color: "white" }} />
+          ) : (
+            <Volume2 className="h-4 w-4" style={{ color: "white" }} />
+          )}
+        </button>
+      </div>
     );
   }
 
