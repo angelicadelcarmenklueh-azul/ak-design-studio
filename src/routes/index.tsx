@@ -29,26 +29,20 @@ export const Route = createFileRoute("/")({
 
 const proof = [
   {
-    label: "[VIDEO/IMAGE OF THE ANAHEIM PROJECT]",
-    image: workAnaheim,
-    alt: "Cut-paper collage of a speaker on stage with a pink starburst and blue lightning bolt",
-    title: "Atlassian, Anaheim",
-    lines:
-      "A video made for Atlassian and presented in Anaheim. Teams in France, Austria and Denmark later asked to replicate it.",
-  },
-  {
-    label: "[VIDEO/IMAGE OF THE SEASONAL ANIMATIONS]",
-    image: workSeasonal,
-    alt: "Cut-paper collage of seasonal leaves, flowers and sun rays in brand colours",
-    title: "Seasonal concept",
-    lines: "A seasonal animation concept that grew followers — and sales.",
-  },
-  {
-    label: "[VIDEO/IMAGE OF THE APP ANIMATION]",
+    label: "[VIDEO OF INNER SELF APP]",
+    src: workAnxietyVideo.url,
     image: workAnxiety,
     alt: "Cut-paper collage of a calm figure surrounded by concentric coloured ripples",
-    title: "Anxiety app",
-    lines: "An animation for an anxiety app — motion with a social purpose.",
+    title: "Inner Self App",
+    lines: "A personal project I made for myself: an animation with an original voice-over, built for Inner Self, an app for anxiety support. No client brief, no deadline — just an idea I believed in, and the chance to give it real emotional weight.",
+  },
+  {
+    label: "[VIDEO OF FREELANCE WORK]",
+    src: workFreelanceVideo.url,
+    image: undefined,
+    alt: "Freelance client work reel",
+    title: "Freelance Work",
+    lines: "A reel of independent client work across several years — from directing the trailer, music, and social media for the Latin American Film Festival at Frankfurt's Film Museum, two years running, to animation for Continental, a logo animation for Deutsche Bahn, and live projections for art events at Kloster Eberbach.",
   },
 ];
 
