@@ -67,7 +67,8 @@ function Index() {
         <div className="reveal mt-10 sm:mt-14">
           <MediaSlot
             label="[VIDEO/REEL FILE — personal reel, autoplay, muted, loop]"
-            image={reelHero}
+            src={reelHeroVideo.url}
+            poster={reelHero}
             alt="Cut-paper collage of bold organic shapes in pink, green, blue and yellow"
             width={1600}
             height={1008}
@@ -75,6 +76,10 @@ function Index() {
             priority
           />
         </div>
+
+        <p className="reveal mt-8 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          A mix of 2D and 3D animation, scored with an original soundtrack — composed by a music studio just for this piece, note for note. It's a small selection of the work I'm proudest of. But it's more than a portfolio: it's a reminder that change is good — that new chapters bring endless new things, and possibility. Rhythm, color, and substance — the way I like to tell every story.
+        </p>
 
         <h1 className="reveal mt-10 max-w-4xl text-[2rem] leading-[1.08] tracking-[-0.01em] text-balance sm:mt-14 sm:text-5xl md:text-6xl">
           I turn brand and product stories into short animations with rhythm,
