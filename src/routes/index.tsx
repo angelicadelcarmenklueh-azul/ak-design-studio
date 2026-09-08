@@ -108,7 +108,7 @@ function Index() {
         <h2 className="display-bold text-3xl tracking-[0.01em] sm:text-4xl">
           Proof
         </h2>
-        <div className="mt-10 grid gap-12 md:grid-cols-3 md:gap-8">
+        <div className="mt-10 grid gap-12 md:grid-cols-2 md:gap-10">
           {proof.map((item) => (
             <article key={item.title}>
               <MediaSlot
