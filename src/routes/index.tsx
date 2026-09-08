@@ -2,9 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { AkLockup } from "@/components/AkLockup";
 import { MediaSlot } from "@/components/MediaSlot";
 import reelHero from "@/assets/reel-hero.jpg";
-import workAnaheim from "@/assets/work-anaheim.jpg";
-import workSeasonal from "@/assets/work-seasonal.jpg";
+import reelHeroVideo from "@/assets/reel-hero.mp4.asset.json";
 import workAnxiety from "@/assets/work-anxiety.jpg";
+import workAnxietyVideo from "@/assets/work-anxiety.mp4.asset.json";
+import workFreelanceVideo from "@/assets/work-freelance.mp4.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -28,26 +29,20 @@ export const Route = createFileRoute("/")({
 
 const proof = [
   {
-    label: "[VIDEO/IMAGE OF THE ANAHEIM PROJECT]",
-    image: workAnaheim,
-    alt: "Cut-paper collage of a speaker on stage with a pink starburst and blue lightning bolt",
-    title: "Atlassian, Anaheim",
-    lines:
-      "A video made for Atlassian and presented in Anaheim. Teams in France, Austria and Denmark later asked to replicate it.",
-  },
-  {
-    label: "[VIDEO/IMAGE OF THE SEASONAL ANIMATIONS]",
-    image: workSeasonal,
-    alt: "Cut-paper collage of seasonal leaves, flowers and sun rays in brand colours",
-    title: "Seasonal concept",
-    lines: "A seasonal animation concept that grew followers — and sales.",
-  },
-  {
-    label: "[VIDEO/IMAGE OF THE APP ANIMATION]",
+    label: "[VIDEO OF INNER SELF APP]",
+    src: workAnxietyVideo.url,
     image: workAnxiety,
     alt: "Cut-paper collage of a calm figure surrounded by concentric coloured ripples",
-    title: "Anxiety app",
-    lines: "An animation for an anxiety app — motion with a social purpose.",
+    title: "Inner Self App",
+    lines: "A personal project I made for myself: an animation with an original voice-over, built for Inner Self, an app for anxiety support. No client brief, no deadline — just an idea I believed in, and the chance to give it real emotional weight.",
+  },
+  {
+    label: "[VIDEO OF FREELANCE WORK]",
+    src: workFreelanceVideo.url,
+    image: undefined,
+    alt: "Freelance client work reel",
+    title: "Freelance Work",
+    lines: "A reel of independent client work across several years — from directing the trailer, music, and social media for the Latin American Film Festival at Frankfurt's Film Museum, two years running, to animation for Continental, a logo animation for Deutsche Bahn, and live projections for art events at Kloster Eberbach.",
   },
 ];
 
@@ -72,7 +67,8 @@ function Index() {
         <div className="reveal mt-10 sm:mt-14">
           <MediaSlot
             label="[VIDEO/REEL FILE — personal reel, autoplay, muted, loop]"
-            image={reelHero}
+            src={reelHeroVideo.url}
+            poster={reelHero}
             alt="Cut-paper collage of bold organic shapes in pink, green, blue and yellow"
             width={1600}
             height={1008}
@@ -80,6 +76,10 @@ function Index() {
             priority
           />
         </div>
+
+        <p className="reveal mt-8 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+          A mix of 2D and 3D animation, scored with an original soundtrack — composed by a music studio just for this piece, note for note. It's a small selection of the work I'm proudest of. But it's more than a portfolio: it's a reminder that change is good — that new chapters bring endless new things, and possibility. Rhythm, color, and substance — the way I like to tell every story.
+        </p>
 
         <h1 className="reveal mt-10 max-w-4xl text-[2rem] leading-[1.08] tracking-[-0.01em] text-balance sm:mt-14 sm:text-5xl md:text-6xl">
           I turn brand and product stories into short animations with rhythm,
@@ -108,11 +108,13 @@ function Index() {
         <h2 className="display-bold text-3xl tracking-[0.01em] sm:text-4xl">
           Proof
         </h2>
-        <div className="mt-10 grid gap-12 md:grid-cols-3 md:gap-8">
+        <div className="mt-10 grid gap-12 md:grid-cols-2 md:gap-10">
           {proof.map((item) => (
             <article key={item.title}>
               <MediaSlot
                 label={item.label}
+                src={item.src}
+                poster={item.image}
                 image={item.image}
                 alt={item.alt}
                 width={1200}
@@ -160,21 +162,22 @@ function Index() {
           </h2>
 
           <a
-            href="mailto:[EMAIL OR BOOKING LINK - PLACEHOLDER]"
+            href="mailto:angelica.klueh@gmail.com"
             className="mt-10 inline-flex items-center gap-3 border-b pb-1 text-lg font-medium transition-opacity hover:opacity-60 sm:text-xl"
             style={{
               color: "var(--background)",
               borderColor: "oklch(1 0 0 / 40%)",
             }}
           >
-            [EMAIL OR BOOKING LINK - PLACEHOLDER]
+            Get in touch
           </a>
 
           <p
-            className="mt-14 text-[0.6rem] tracking-caps uppercase sm:text-[0.65rem]"
+            className="mt-14 flex gap-4 text-[0.6rem] tracking-caps uppercase sm:text-[0.65rem]"
             style={{ color: "oklch(1 0 0 / 45%)" }}
           >
-            [SOCIAL LINKS - OPTIONAL: Instagram / Behance / LinkedIn]
+            <a href="https://www.linkedin.com/in/angelica-del-carmen-klüh-346852265" target="_blank" rel="noopener noreferrer" className="hover:opacity-70">LinkedIn</a>
+            <a href="https://vimeo.com/user167174522" target="_blank" rel="noopener noreferrer" className="hover:opacity-70">Vimeo</a>
           </p>
 
           <div className="mt-16">
