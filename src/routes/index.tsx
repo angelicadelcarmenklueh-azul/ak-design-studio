@@ -162,14 +162,14 @@ function Index() {
           </h2>
 
           <a
-            href="mailto:[EMAIL OR BOOKING LINK - PLACEHOLDER]"
+            href="mailto:angelica.klueh@gmail.com"
             className="mt-10 inline-flex items-center gap-3 border-b pb-1 text-lg font-medium transition-opacity hover:opacity-60 sm:text-xl"
             style={{
               color: "var(--background)",
               borderColor: "oklch(1 0 0 / 40%)",
             }}
           >
-            [EMAIL OR BOOKING LINK - PLACEHOLDER]
+            Get in touch
           </a>
 
           <p
