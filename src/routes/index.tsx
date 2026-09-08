@@ -113,6 +113,8 @@ function Index() {
             <article key={item.title}>
               <MediaSlot
                 label={item.label}
+                src={item.src}
+                poster={item.image}
                 image={item.image}
                 alt={item.alt}
                 width={1200}
