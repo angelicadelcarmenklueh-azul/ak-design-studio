@@ -14,13 +14,13 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Motion designer at Seibert Group, with roots in fashion illustration. Short animations with rhythm, colour and substance.",
+          "Motion graphic designer working across 2D and 3D animation, brand storytelling, and AI-assisted workflows. Open to new opportunities, in-house or freelance.",
       },
       { property: "og:title", content: "Angelica Klüh — Motion Graphic Designer | Visual Storytelling & AI" },
       {
         property: "og:description",
         content:
-          "Short brand and product animations with rhythm, colour and substance. Open for freelance work.",
+          "Motion graphic designer working across 2D and 3D animation, brand storytelling, and AI-assisted workflows. Open to new opportunities, in-house or freelance.",
       },
     ],
   }),
