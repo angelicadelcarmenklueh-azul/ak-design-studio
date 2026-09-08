@@ -173,10 +173,11 @@ function Index() {
           </a>
 
           <p
-            className="mt-14 text-[0.6rem] tracking-caps uppercase sm:text-[0.65rem]"
+            className="mt-14 flex gap-4 text-[0.6rem] tracking-caps uppercase sm:text-[0.65rem]"
             style={{ color: "oklch(1 0 0 / 45%)" }}
           >
-            [SOCIAL LINKS - OPTIONAL: Instagram / Behance / LinkedIn]
+            <a href="https://www.linkedin.com/in/angelica-del-carmen-klüh-346852265" target="_blank" rel="noopener noreferrer" className="hover:opacity-70">LinkedIn</a>
+            <a href="https://vimeo.com/user167174522" target="_blank" rel="noopener noreferrer" className="hover:opacity-70">Vimeo</a>
           </p>
 
           <div className="mt-16">
