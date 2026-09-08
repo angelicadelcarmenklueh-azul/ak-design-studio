@@ -2,9 +2,10 @@ import { createFileRoute } from "@tanstack/react-router";
 import { AkLockup } from "@/components/AkLockup";
 import { MediaSlot } from "@/components/MediaSlot";
 import reelHero from "@/assets/reel-hero.jpg";
-import workAnaheim from "@/assets/work-anaheim.jpg";
-import workSeasonal from "@/assets/work-seasonal.jpg";
+import reelHeroVideo from "@/assets/reel-hero.mp4.asset.json";
 import workAnxiety from "@/assets/work-anxiety.jpg";
+import workAnxietyVideo from "@/assets/work-anxiety.mp4.asset.json";
+import workFreelanceVideo from "@/assets/work-freelance.mp4.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
