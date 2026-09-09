@@ -10,13 +10,13 @@ import workFreelanceVideo from "@/assets/work-freelance.mp4.asset.json";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Angelica Klüh — Motion Graphic Designer | Visual Storytelling & AI" },
+      { title: "Angelica Klüh — Motion Graphic Designer | Visual Storytelling" },
       {
         name: "description",
         content:
           "Motion graphic designer working across 2D and 3D animation, brand storytelling, and AI-assisted workflows. Open to new opportunities, in-house or freelance.",
       },
-      { property: "og:title", content: "Angelica Klüh — Motion Graphic Designer | Visual Storytelling & AI" },
+      { property: "og:title", content: "Angelica Klüh — Motion Graphic Designer | Visual Storytelling" },
       {
         property: "og:description",
         content:
@@ -60,7 +60,7 @@ function Index() {
         <header className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <AkLockup size="lg" />
           <span className="text-[0.6rem] tracking-caps text-muted-foreground uppercase sm:text-[0.68rem]">
-            Motion Graphic Designer | Visual Storytelling & AI
+            Motion Graphic Designer | Visual Storytelling
           </span>
         </header>
 
@@ -93,9 +93,7 @@ function Index() {
           Who I am
         </h2>
         <p className="mt-8 max-w-3xl text-xl leading-[1.45] font-normal tracking-[-0.005em] text-pretty sm:text-2xl md:text-3xl">
-          Graphic designer with roots in art and illustration, now working in
-          motion design — from brand videos to interactive product animation.
-          Increasingly building with AI-assisted workflows.
+          Graphic designer with roots in art and illustration, specialized in motion graphics — from brand videos to interactive product animation, with a Master's degree in the same field. My path has taken me through Mexico, the United States, and Germany, each place shaping how I see color, rhythm, and story. Increasingly building with AI-assisted workflows.
           <span className="block text-muted-foreground">
             Currently open to new opportunities, in-house or freelance, with
             teams who care about story as much as motion.
@@ -172,12 +170,16 @@ function Index() {
             Get in touch
           </a>
 
+          <p className="mt-14 text-[0.6rem] tracking-caps uppercase sm:text-[0.65rem]" style={{ color: "oklch(1 0 0 / 45%)" }}>
+            More about my work
+          </p>
           <p
-            className="mt-14 flex gap-4 text-[0.6rem] tracking-caps uppercase sm:text-[0.65rem]"
+            className="mt-3 flex gap-4 text-[0.6rem] tracking-caps uppercase sm:text-[0.65rem]"
             style={{ color: "oklch(1 0 0 / 45%)" }}
           >
             <a href="https://www.linkedin.com/in/angelica-del-carmen-klüh-346852265" target="_blank" rel="noopener noreferrer" className="hover:opacity-70">LinkedIn</a>
             <a href="https://vimeo.com/user167174522" target="_blank" rel="noopener noreferrer" className="hover:opacity-70">Vimeo</a>
+            <span className="opacity-50">Résumé (coming soon)</span>
           </p>
 
           <div className="mt-16">
@@ -187,7 +189,7 @@ function Index() {
             className="mt-6 text-[0.6rem] tracking-caps uppercase"
             style={{ color: "oklch(1 0 0 / 45%)" }}
           >
-            Motion Graphic Designer | Visual Storytelling & AI
+            Motion Graphic Designer | Visual Storytelling
           </p>
         </div>
       </section>
