@@ -118,8 +118,8 @@ function Index() {
                 image={item.image}
                 alt={item.alt}
                 width={1200}
-                height={912}
-                ratio="4 / 3"
+                height={675}
+                ratio="16 / 9"
               />
               <h3 className="display-bold mt-5 text-xl tracking-[0.01em]">
                 {item.title}
