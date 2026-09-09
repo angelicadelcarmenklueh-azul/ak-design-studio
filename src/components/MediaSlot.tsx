@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import { Volume2, VolumeX } from "lucide-react";
+import { Volume2, VolumeX, Play, Pause } from "lucide-react";
 
 type Props = {
   /** Placeholder label, shown when no src is provided. Keep the [ ] marker. */
@@ -32,12 +32,25 @@ export function MediaSlot({
   tone = "light",
   priority = false,
 }: Props) {
+  const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
+  const [playing, setPlaying] = useState(true);
 
   if (src) {
+    const togglePlay = () => {
+      if (!videoRef.current) return;
+      if (playing) {
+        videoRef.current.pause();
+      } else {
+        videoRef.current.play();
+      }
+      setPlaying(!playing);
+    };
+
     return (
       <div className="relative">
         <video
+          ref={videoRef}
           src={src}
           poster={poster}
           autoPlay
@@ -48,19 +61,34 @@ export function MediaSlot({
           className="h-full w-full rounded-2xl object-cover"
           style={{ aspectRatio: ratio }}
         />
-        <button
-          type="button"
-          onClick={() => setMuted((m) => !m)}
-          aria-label={muted ? "Unmute video" : "Mute video"}
-          className="absolute bottom-4 right-4 flex h-9 w-9 items-center justify-center rounded-full backdrop-blur transition-opacity hover:opacity-80"
-          style={{ background: "oklch(0.183 0 0 / 55%)" }}
-        >
-          {muted ? (
-            <VolumeX className="h-4 w-4" style={{ color: "white" }} />
-          ) : (
-            <Volume2 className="h-4 w-4" style={{ color: "white" }} />
-          )}
-        </button>
+        <div className="absolute bottom-4 right-4 flex gap-2">
+          <button
+            type="button"
+            onClick={togglePlay}
+            aria-label={playing ? "Pause video" : "Play video"}
+            className="flex h-9 w-9 items-center justify-center rounded-full backdrop-blur transition-opacity hover:opacity-80"
+            style={{ background: "oklch(0.183 0 0 / 55%)" }}
+          >
+            {playing ? (
+              <Pause className="h-4 w-4" style={{ color: "white" }} />
+            ) : (
+              <Play className="h-4 w-4" style={{ color: "white" }} />
+            )}
+          </button>
+          <button
+            type="button"
+            onClick={() => setMuted((m) => !m)}
+            aria-label={muted ? "Unmute video" : "Mute video"}
+            className="flex h-9 w-9 items-center justify-center rounded-full backdrop-blur transition-opacity hover:opacity-80"
+            style={{ background: "oklch(0.183 0 0 / 55%)" }}
+          >
+            {muted ? (
+              <VolumeX className="h-4 w-4" style={{ color: "white" }} />
+            ) : (
+              <Volume2 className="h-4 w-4" style={{ color: "white" }} />
+            )}
+          </button>
+        </div>
       </div>
     );
   }
