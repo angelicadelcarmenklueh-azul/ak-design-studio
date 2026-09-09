@@ -33,10 +33,9 @@ export function MediaSlot({
   priority = false,
 }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null);
+  const seekRef = useRef<HTMLInputElement>(null);
   const [muted, setMuted] = useState(true);
   const [playing, setPlaying] = useState(true);
-  const [duration, setDuration] = useState(0);
-  const [currentTime, setCurrentTime] = useState(0);
 
   if (src) {
     const togglePlay = () => {
@@ -49,6 +48,22 @@ export function MediaSlot({
       setPlaying(!playing);
     };
 
+    const handleTimeUpdate = () => {
+      const video = videoRef.current;
+      const seek = seekRef.current;
+      if (!video || !seek) return;
+      if (Number.isFinite(video.duration) && video.duration > 0) {
+        seek.max = String(video.duration);
+      }
+      seek.value = String(video.currentTime);
+    };
+
+    const handleSeek = (e: React.ChangeEvent<HTMLInputElement>) => {
+      if (videoRef.current) {
+        videoRef.current.currentTime = Number(e.target.value);
+      }
+    };
+
     return (
       <div className="relative">
         <video
@@ -59,25 +74,19 @@ export function MediaSlot({
           muted={muted}
           loop
           playsInline
-          preload={priority ? "auto" : "none"}
-          onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
-          onTimeUpdate={(e) => setCurrentTime(e.currentTarget.currentTime)}
+          preload={priority ? "auto" : "metadata"}
+          onTimeUpdate={handleTimeUpdate}
           className="h-full w-full rounded-2xl object-cover"
           style={{ aspectRatio: ratio }}
         />
         <input
+          ref={seekRef}
           type="range"
           min={0}
-          max={duration || 0}
+          max={9999}
+          defaultValue={0}
           step={0.01}
-          value={currentTime}
-          onChange={(e) => {
-            const time = Number(e.target.value);
-            if (videoRef.current) {
-              videoRef.current.currentTime = time;
-            }
-            setCurrentTime(time);
-          }}
+          onChange={handleSeek}
           aria-label="Seek video"
           className="absolute inset-x-4 bottom-16 h-1 w-[calc(100%-2rem)] cursor-pointer appearance-none rounded-full bg-white/25"
           style={{ accentColor: "white" }}
