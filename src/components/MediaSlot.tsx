@@ -35,6 +35,8 @@ export function MediaSlot({
   const videoRef = useRef<HTMLVideoElement>(null);
   const [muted, setMuted] = useState(true);
   const [playing, setPlaying] = useState(true);
+  const [duration, setDuration] = useState(0);
+  const [currentTime, setCurrentTime] = useState(0);
 
   if (src) {
     const togglePlay = () => {
@@ -58,8 +60,27 @@ export function MediaSlot({
           loop
           playsInline
           preload={priority ? "auto" : "none"}
+          onLoadedMetadata={(e) => setDuration(e.currentTarget.duration)}
+          onTimeUpdate={(e) => setCurrentTime(e.currentTarget.currentTime)}
           className="h-full w-full rounded-2xl object-cover"
           style={{ aspectRatio: ratio }}
+        />
+        <input
+          type="range"
+          min={0}
+          max={duration || 0}
+          step={0.01}
+          value={currentTime}
+          onChange={(e) => {
+            const time = Number(e.target.value);
+            if (videoRef.current) {
+              videoRef.current.currentTime = time;
+            }
+            setCurrentTime(time);
+          }}
+          aria-label="Seek video"
+          className="absolute inset-x-4 bottom-16 h-1 w-[calc(100%-2rem)] cursor-pointer appearance-none rounded-full bg-white/25"
+          style={{ accentColor: "white" }}
         />
         <div className="absolute bottom-4 right-4 flex gap-2">
           <button
