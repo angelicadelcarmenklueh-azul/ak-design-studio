@@ -85,7 +85,7 @@
   --ring: oklch(0.183 0 0 / 40%);
   --ink: oklch(0.183 0 0);
   --dot-pink: oklch(0.643 0.213 3.5);
-  --dot-green: oklch(0.81 0.176 152);
+  --dot-green: #0055FF;
   --font-display: "Poiret One", ui-sans-serif, system-ui, sans-serif;
   --font-body: "Montserrat", ui-sans-serif, system-ui, sans-serif;
   --chart-1: oklch(0.646 0.222 41.116);
