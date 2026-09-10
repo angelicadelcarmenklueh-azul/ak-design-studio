@@ -71,8 +71,8 @@ function Index() {
             poster={reelHero}
             alt="Cut-paper collage of bold organic shapes in pink, green, blue and yellow"
             width={1600}
-            height={1008}
-            ratio="16 / 10"
+            height={900}
+            ratio="16 / 9"
             priority
           />
         </div>
