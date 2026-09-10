@@ -49,12 +49,12 @@ export function AkLockup({
           <PinkDot
             size={dotSize}
             className="dot-wiggle"
-            style={{ animationDuration: "7.3s", animationDelay: "-1.1s" }}
+            style={{ animationDuration: "7.3s", animationDelay: "-1.1s", transform: "scaleX(-1)" }}
           />
           <GreenDot
             size={dotSize}
             className="dot-wiggle"
-            style={{ animationDuration: "9.1s", animationDelay: "-3.4s", transform: "scaleX(-1)" }}
+            style={{ animationDuration: "9.1s", animationDelay: "-3.4s" }}
           />
         </span>
       </span>
