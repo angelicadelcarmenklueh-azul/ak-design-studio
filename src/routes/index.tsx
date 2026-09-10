@@ -177,7 +177,7 @@ function Index() {
             className="mt-3 flex gap-4 text-[0.6rem] tracking-caps uppercase sm:text-[0.65rem]"
             style={{ color: "oklch(1 0 0 / 45%)" }}
           >
-            <a href="https://www.linkedin.com/in/angelica-del-carmen-klüh-346852265" target="_blank" rel="noopener noreferrer" className="hover:opacity-70">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/angelica-klüh" target="_blank" rel="noopener noreferrer" className="hover:opacity-70">LinkedIn</a>
             <a href="https://vimeo.com/user167174522" target="_blank" rel="noopener noreferrer" className="hover:opacity-70">Vimeo</a>
             <span className="opacity-50">Résumé (coming soon)</span>
           </p>
