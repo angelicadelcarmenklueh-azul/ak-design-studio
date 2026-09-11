@@ -6,6 +6,7 @@ import reelHeroVideo from "@/assets/reel-hero.mp4.asset.json";
 import workAnxiety from "@/assets/work-anxiety.jpg";
 import workAnxietyVideo from "@/assets/work-anxiety.mp4.asset.json";
 import workFreelanceVideo from "@/assets/work-freelance.mp4.asset.json";
+import resumePdf from "@/assets/resume.pdf.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -179,7 +180,7 @@ function Index() {
           >
             <a href="https://www.linkedin.com/in/angelica-klüh" target="_blank" rel="noopener noreferrer" className="hover:opacity-70">LinkedIn</a>
             <a href="https://vimeo.com/user167174522" target="_blank" rel="noopener noreferrer" className="hover:opacity-70">Vimeo</a>
-            <span className="opacity-50">Résumé (coming soon)</span>
+            <a href={resumePdf.url} download target="_blank" rel="noopener noreferrer" className="hover:opacity-70">Résumé</a>
           </p>
 
           <div className="mt-16">
