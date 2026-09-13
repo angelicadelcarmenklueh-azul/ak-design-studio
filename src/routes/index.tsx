@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { AkLockup } from "@/components/AkLockup";
 import { MediaSlot } from "@/components/MediaSlot";
-import reelHero from "@/assets/reel-hero.jpg";
+import reelHeroPoster from "@/assets/reel-hero-poster.png.asset.json";
 import reelHeroVideo from "@/assets/reel-hero.mp4.asset.json";
 import workAnxiety from "@/assets/work-anxiety.jpg";
 import workAnxietyVideo from "@/assets/work-anxiety.mp4.asset.json";
@@ -79,7 +79,8 @@ function Index() {
           <MediaSlot
             label="[VIDEO/REEL FILE — personal reel, autoplay, muted, loop]"
             src={reelHeroVideo.url}
-            poster={reelHero}
+            image={reelHeroPoster.url}
+            poster={reelHeroPoster.url}
             alt="Cut-paper collage of bold organic shapes in pink, green, blue and yellow"
             width={1600}
             height={900}
