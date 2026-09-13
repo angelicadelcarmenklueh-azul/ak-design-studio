@@ -7,6 +7,7 @@ import workAnxiety from "@/assets/work-anxiety.jpg";
 import workAnxietyVideo from "@/assets/work-anxiety.mp4.asset.json";
 import workFreelanceVideo from "@/assets/work-freelance.mp4.asset.json";
 import resumePdf from "@/assets/resume.pdf.asset.json";
+import workMonclerVideo from "@/assets/Moncler-sound-design.mp4.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -44,6 +45,15 @@ const proof = [
     alt: "Freelance client work reel",
     title: "Freelance Work",
     lines: "A reel of independent client work across several years — from directing the trailer, music, and social media for the Latin American Film Festival at Frankfurt's Film Museum, two years running, to animation for Continental, a logo animation for Deutsche Bahn, and live projections for art events at Kloster Eberbach.",
+  },
+  {
+    label: "[VIDEO OF MONCLER SOUND DESIGN]",
+    src: workMonclerVideo.url,
+    image: undefined,
+    alt: "Moncler sound design project",
+    title: "Moncler Sound Design",
+    lines: "Working from a pre-recorded voiceover and licensed production music, I shaped the sound design — music editing and final mix.",
+    wide: true,
   },
 ];
 
@@ -109,7 +119,7 @@ function Index() {
         </h2>
         <div className="mt-10 grid gap-12 md:grid-cols-2 md:gap-10">
           {proof.map((item) => (
-            <article key={item.title}>
+            <article key={item.title} className={item.wide ? "md:col-span-2" : ""}>
               <MediaSlot
                 label={item.label}
                 src={item.src}
