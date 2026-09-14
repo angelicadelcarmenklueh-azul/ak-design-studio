@@ -1,6 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, MotionConfig } from "framer-motion";
 import { AkLockup } from "@/components/AkLockup";
 import { MediaSlot } from "@/components/MediaSlot";
 import reelHeroPoster from "@/assets/reel-hero-poster.png.asset.json";
@@ -70,82 +69,65 @@ const springTransition = { type: "spring" as const, stiffness: 150, damping: 15 
 type ProofItem = (typeof proof)[number];
 
 function ProofCard({ item }: { item: ProofItem }) {
-  const [rotateX, setRotateX] = useState(0);
-  const [rotateY, setRotateY] = useState(0);
-  const [isHovered, setIsHovered] = useState(false);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
-    const rect = e.currentTarget.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const centerX = rect.width / 2;
-    const centerY = rect.height / 2;
-    setRotateX(((centerY - y) / centerY) * 8);
-    setRotateY(((x - centerX) / centerX) * 8);
-  };
-
-  const handleMouseLeave = () => {
-    setRotateX(0);
-    setRotateY(0);
-    setIsHovered(false);
-  };
-
   return (
-    <motion.article
-      className={item.wide ? "md:col-span-2" : ""}
-      style={{ perspective: 1000 }}
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-    >
+    <article className={item.wide ? "md:col-span-2" : ""}>
       <motion.div
-        animate={{ rotateX, rotateY }}
+        whileHover={{ scale: 1.05 }}
         transition={springTransition}
-        style={{ transformStyle: "preserve-3d" }}
       >
-        <motion.div
-          animate={{ scale: isHovered ? 1.04 : 1 }}
-          transition={springTransition}
-        >
-          <MediaSlot
-            label={item.label}
-            src={item.src}
-            poster={item.image}
-            image={item.image}
-            alt={item.alt}
-            width={1200}
-            height={675}
-            ratio="16 / 9"
-          />
-        </motion.div>
-        <motion.h3
-          className="display-bold mt-5 inline-block text-xl tracking-[0.01em]"
-          animate={{ scale: isHovered ? 1.025 : 1 }}
-          transition={springTransition}
-        >
-          {item.title}
-        </motion.h3>
-        <p className="mt-2 text-[0.95rem] leading-relaxed text-muted-foreground text-pretty">
-          {item.lines}
-        </p>
+        <MediaSlot
+          label={item.label}
+          src={item.src}
+          poster={item.image}
+          image={item.image}
+          alt={item.alt}
+          width={1200}
+          height={675}
+          ratio="16 / 9"
+        />
       </motion.div>
-    </motion.article>
+      <motion.h3
+        className="display-bold mt-5 inline-block text-xl tracking-[0.01em]"
+        whileHover={{ scale: 1.05 }}
+        transition={springTransition}
+      >
+        {item.title}
+      </motion.h3>
+      <motion.p
+        className="mt-2 origin-left text-[0.95rem] leading-relaxed text-muted-foreground text-pretty"
+        whileHover={{ scale: 1.05 }}
+        transition={springTransition}
+      >
+        {item.lines}
+      </motion.p>
+    </article>
   );
 }
 
 function Index() {
   return (
+    <MotionConfig reducedMotion="user">
     <main className="min-h-screen bg-background text-foreground">
       {/* 1. HERO */}
       <section className="mx-auto w-full max-w-6xl px-6 pt-14 pb-16 sm:px-10 sm:pt-16 md:pb-24">
         <header className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-          <AkLockup size="lg" />
-          <span className="text-[0.6rem] tracking-caps text-muted-foreground uppercase sm:text-[0.68rem]">
+          <motion.div whileHover={{ scale: 1.05 }} transition={springTransition}>
+            <AkLockup size="lg" />
+          </motion.div>
+          <motion.span
+            className="origin-right text-[0.6rem] tracking-caps text-muted-foreground uppercase sm:text-[0.68rem]"
+            whileHover={{ scale: 1.05 }}
+            transition={springTransition}
+          >
             Motion Graphic Designer | Visual Storytelling
-          </span>
+          </motion.span>
         </header>
 
-        <div className="reveal mt-10 sm:mt-14">
+        <motion.div
+          className="reveal mt-10 sm:mt-14"
+          whileHover={{ scale: 1.05 }}
+          transition={springTransition}
+        >
           <MediaSlot
             label="[VIDEO/REEL FILE — personal reel, autoplay, muted, loop]"
             src={reelHeroVideo.url}
@@ -157,37 +139,57 @@ function Index() {
             ratio="16 / 9"
             priority
           />
-        </div>
+        </motion.div>
 
-        <p className="reveal mt-8 max-w-3xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+        <motion.p
+          className="reveal mt-8 max-w-3xl origin-left text-base leading-relaxed text-muted-foreground sm:text-lg"
+          whileHover={{ scale: 1.05 }}
+          transition={springTransition}
+        >
           A mix of 2D and 3D animation, scored with an original soundtrack — composed by a music studio just for this piece, note for note. It's a small selection of the work I'm proudest of. But it's more than a portfolio: it's a reminder that change is good — that new chapters bring endless new things, and possibility. Rhythm, color, and substance — the way I like to tell every story.
-        </p>
+        </motion.p>
 
-        <h1 className="reveal mt-16 max-w-4xl text-[2rem] leading-[1.08] tracking-[-0.01em] text-balance sm:mt-20 sm:text-5xl md:text-6xl">
+        <motion.h1
+          className="reveal mt-16 max-w-4xl origin-left text-[2rem] leading-[1.08] tracking-[-0.01em] text-balance sm:mt-20 sm:text-5xl md:text-6xl"
+          whileHover={{ scale: 1.05 }}
+          transition={springTransition}
+        >
           I turn brand and product stories into short animations with rhythm,
           colour, and substance.
-        </h1>
+        </motion.h1>
       </section>
 
       {/* 2. WHO I AM */}
       <section className="mx-auto w-full max-w-6xl px-6 py-20 sm:px-10 md:py-28">
-        <h2 className="display-bold text-3xl tracking-[0.01em] sm:text-4xl">
+        <motion.h2
+          className="display-bold inline-block origin-left text-3xl tracking-[0.01em] sm:text-4xl"
+          whileHover={{ scale: 1.05 }}
+          transition={springTransition}
+        >
           Who I am
-        </h2>
-        <p className="mt-8 max-w-3xl text-xl leading-[1.45] font-normal tracking-[-0.005em] text-pretty sm:text-2xl md:text-3xl">
+        </motion.h2>
+        <motion.p
+          className="mt-8 max-w-3xl origin-left text-xl leading-[1.45] font-normal tracking-[-0.005em] text-pretty sm:text-2xl md:text-3xl"
+          whileHover={{ scale: 1.05 }}
+          transition={springTransition}
+        >
           Graphic designer with roots in art and illustration, specialized in motion graphics — from brand videos to interactive product animation, with a Master's degree in the same field. My path has taken me through Mexico, the United States, and Germany, each place shaping how I see color, rhythm, and story. Increasingly building with AI-assisted workflows.
           <span className="block text-muted-foreground">
             Currently open to new opportunities, in-house or freelance, with
             teams who care about story as much as motion.
           </span>
-        </p>
+        </motion.p>
       </section>
 
       {/* 3. PROOF */}
       <section className="mx-auto w-full max-w-6xl px-6 py-20 sm:px-10 md:py-28">
-        <h2 className="display-bold text-3xl tracking-[0.01em] sm:text-4xl">
+        <motion.h2
+          className="display-bold inline-block origin-left text-3xl tracking-[0.01em] sm:text-4xl"
+          whileHover={{ scale: 1.05 }}
+          transition={springTransition}
+        >
           Proof
-        </h2>
+        </motion.h2>
         <div className="mt-10 grid gap-12 md:grid-cols-2 md:gap-10">
           {proof.map((item) => (
             <ProofCard key={item.title} item={item} />
@@ -197,18 +199,30 @@ function Index() {
 
       {/* 4. HOW I WORK */}
       <section className="mx-auto w-full max-w-6xl px-6 py-20 sm:px-10 md:py-28">
-        <h2 className="display-bold text-3xl tracking-[0.01em] sm:text-4xl">
+        <motion.h2
+          className="display-bold inline-block origin-left text-3xl tracking-[0.01em] sm:text-4xl"
+          whileHover={{ scale: 1.05 }}
+          transition={springTransition}
+        >
           How I work
-        </h2>
+        </motion.h2>
         <div className="mt-10 grid gap-10 border-t border-border pt-10 md:grid-cols-3 md:gap-8">
           {how.map((item) => (
             <div key={item.word}>
-              <h3 className="display-bold text-3xl tracking-[0.01em] sm:text-4xl">
+              <motion.h3
+                className="display-bold inline-block origin-left text-3xl tracking-[0.01em] sm:text-4xl"
+                whileHover={{ scale: 1.05 }}
+                transition={springTransition}
+              >
                 {item.word}
-              </h3>
-              <p className="mt-3 max-w-xs text-[0.95rem] leading-relaxed text-muted-foreground text-pretty">
+              </motion.h3>
+              <motion.p
+                className="mt-3 max-w-xs origin-left text-[0.95rem] leading-relaxed text-muted-foreground text-pretty"
+                whileHover={{ scale: 1.05 }}
+                transition={springTransition}
+              >
                 {item.line}
-              </p>
+              </motion.p>
             </div>
           ))}
         </div>
@@ -217,47 +231,61 @@ function Index() {
       {/* 5. CONTACT */}
       <section className="mt-10 py-24 md:py-32" style={{ background: "var(--ink)" }}>
         <div className="mx-auto w-full max-w-6xl px-6 sm:px-10">
-          <h2
-            className="display-bold max-w-4xl text-[2rem] leading-[1.08] tracking-[-0.01em] text-balance sm:text-5xl md:text-6xl"
+          <motion.h2
+            className="display-bold max-w-4xl origin-left text-[2rem] leading-[1.08] tracking-[-0.01em] text-balance sm:text-5xl md:text-6xl"
             style={{ color: "var(--background)" }}
+            whileHover={{ scale: 1.05 }}
+            transition={springTransition}
           >
             Open to new projects and opportunities — freelance or full-time.
-          </h2>
+          </motion.h2>
 
-          <a
+          <motion.a
             href="mailto:angelica.klueh@gmail.com"
-            className="mt-10 inline-flex items-center gap-3 border-b pb-1 text-lg font-medium transition-opacity hover:opacity-60 sm:text-xl"
+            className="mt-10 inline-flex origin-left items-center gap-3 border-b pb-1 text-lg font-medium transition-opacity hover:opacity-60 sm:text-xl"
             style={{
               color: "var(--background)",
               borderColor: "oklch(1 0 0 / 40%)",
             }}
+            whileHover={{ scale: 1.05 }}
+            transition={springTransition}
           >
             Get in touch
-          </a>
+          </motion.a>
 
-          <p className="mt-14 text-[0.6rem] tracking-caps uppercase sm:text-[0.65rem]" style={{ color: "oklch(1 0 0 / 45%)" }}>
+          <motion.p
+            className="mt-14 w-fit origin-left text-[0.6rem] tracking-caps uppercase sm:text-[0.65rem]"
+            style={{ color: "oklch(1 0 0 / 45%)" }}
+            whileHover={{ scale: 1.05 }}
+            transition={springTransition}
+          >
             More about my work
-          </p>
+          </motion.p>
           <p
             className="mt-3 flex gap-4 text-[0.6rem] tracking-caps uppercase sm:text-[0.65rem]"
             style={{ color: "oklch(1 0 0 / 45%)" }}
           >
-            <a href="https://www.linkedin.com/in/angelica-klüh" target="_blank" rel="noopener noreferrer" className="hover:opacity-70">LinkedIn</a>
-            <a href="https://vimeo.com/user167174522" target="_blank" rel="noopener noreferrer" className="hover:opacity-70">Vimeo</a>
-            <a href={resumePdf.url} download target="_blank" rel="noopener noreferrer" className="hover:opacity-70">Résumé</a>
+             <motion.a href="https://www.linkedin.com/in/angelica-klüh" target="_blank" rel="noopener noreferrer" className="hover:opacity-70" whileHover={{ scale: 1.05 }} transition={springTransition}>LinkedIn</motion.a>
+             <motion.a href="https://vimeo.com/user167174522" target="_blank" rel="noopener noreferrer" className="hover:opacity-70" whileHover={{ scale: 1.05 }} transition={springTransition}>Vimeo</motion.a>
+             <motion.a href={resumePdf.url} download target="_blank" rel="noopener noreferrer" className="hover:opacity-70" whileHover={{ scale: 1.05 }} transition={springTransition}>Résumé</motion.a>
           </p>
 
           <div className="mt-16">
-            <AkLockup size="lg" tone="dark" />
+            <motion.div className="w-fit" whileHover={{ scale: 1.05 }} transition={springTransition}>
+              <AkLockup size="lg" tone="dark" />
+            </motion.div>
           </div>
-          <p
-            className="mt-6 text-[0.6rem] tracking-caps uppercase"
+          <motion.p
+            className="mt-6 w-fit origin-left text-[0.6rem] tracking-caps uppercase"
             style={{ color: "oklch(1 0 0 / 45%)" }}
+            whileHover={{ scale: 1.05 }}
+            transition={springTransition}
           >
             Motion Graphic Designer | Visual Storytelling
-          </p>
+          </motion.p>
         </div>
       </section>
     </main>
+    </MotionConfig>
   );
 }
