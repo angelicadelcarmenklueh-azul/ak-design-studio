@@ -65,6 +65,74 @@ const how = [
   { word: "Vibrant", line: "Vibrant not just in color, but in sound." },
 ];
 
+const springTransition = { type: "spring", stiffness: 150, damping: 15 };
+
+type ProofItem = (typeof proof)[number];
+
+function ProofCard({ item }: { item: ProofItem }) {
+  const [rotateX, setRotateX] = useState(0);
+  const [rotateY, setRotateY] = useState(0);
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseMove = (e: React.MouseEvent<HTMLElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const centerX = rect.width / 2;
+    const centerY = rect.height / 2;
+    setRotateX(((centerY - y) / centerY) * 8);
+    setRotateY(((x - centerX) / centerX) * 8);
+  };
+
+  const handleMouseLeave = () => {
+    setRotateX(0);
+    setRotateY(0);
+    setIsHovered(false);
+  };
+
+  return (
+    <motion.article
+      className={item.wide ? "md:col-span-2" : ""}
+      style={{ perspective: 1000 }}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+    >
+      <motion.div
+        animate={{ rotateX, rotateY }}
+        transition={springTransition}
+        style={{ transformStyle: "preserve-3d" }}
+      >
+        <motion.div
+          animate={{ scale: isHovered ? 1.04 : 1 }}
+          transition={springTransition}
+        >
+          <MediaSlot
+            label={item.label}
+            src={item.src}
+            poster={item.image}
+            image={item.image}
+            alt={item.alt}
+            width={1200}
+            height={675}
+            ratio="16 / 9"
+          />
+        </motion.div>
+        <motion.h3
+          className="display-bold mt-5 inline-block text-xl tracking-[0.01em]"
+          animate={{ scale: isHovered ? 1.025 : 1 }}
+          transition={springTransition}
+        >
+          {item.title}
+        </motion.h3>
+        <p className="mt-2 text-[0.95rem] leading-relaxed text-muted-foreground text-pretty">
+          {item.lines}
+        </p>
+      </motion.div>
+    </motion.article>
+  );
+}
+
 function Index() {
   return (
     <main className="min-h-screen bg-background text-foreground">
