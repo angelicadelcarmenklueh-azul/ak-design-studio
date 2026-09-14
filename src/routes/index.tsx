@@ -122,24 +122,7 @@ function Index() {
         </h2>
         <div className="mt-10 grid gap-12 md:grid-cols-2 md:gap-10">
           {proof.map((item) => (
-            <article key={item.title} className={item.wide ? "md:col-span-2" : ""}>
-              <MediaSlot
-                label={item.label}
-                src={item.src}
-                poster={item.image}
-                image={item.image}
-                alt={item.alt}
-                width={1200}
-                height={675}
-                ratio="16 / 9"
-              />
-              <h3 className="display-bold mt-5 text-xl tracking-[0.01em]">
-                {item.title}
-              </h3>
-              <p className="mt-2 text-[0.95rem] leading-relaxed text-muted-foreground text-pretty">
-                {item.lines}
-              </p>
-            </article>
+            <ProofCard key={item.title} item={item} />
           ))}
         </div>
       </section>
