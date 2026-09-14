@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { motion } from "framer-motion";
+import { motion, MotionConfig } from "framer-motion";
 import { AkLockup } from "@/components/AkLockup";
 import { MediaSlot } from "@/components/MediaSlot";
 import reelHeroPoster from "@/assets/reel-hero-poster.png.asset.json";
@@ -106,14 +106,21 @@ function ProofCard({ item }: { item: ProofItem }) {
 
 function Index() {
   return (
+    <MotionConfig reducedMotion="user">
     <main className="min-h-screen bg-background text-foreground">
       {/* 1. HERO */}
       <section className="mx-auto w-full max-w-6xl px-6 pt-14 pb-16 sm:px-10 sm:pt-16 md:pb-24">
         <header className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
-          <AkLockup size="lg" />
-          <span className="text-[0.6rem] tracking-caps text-muted-foreground uppercase sm:text-[0.68rem]">
+          <motion.div whileHover={{ scale: 1.05 }} transition={springTransition}>
+            <AkLockup size="lg" />
+          </motion.div>
+          <motion.span
+            className="origin-right text-[0.6rem] tracking-caps text-muted-foreground uppercase sm:text-[0.68rem]"
+            whileHover={{ scale: 1.05 }}
+            transition={springTransition}
+          >
             Motion Graphic Designer | Visual Storytelling
-          </span>
+          </motion.span>
         </header>
 
         <motion.div
@@ -246,9 +253,14 @@ function Index() {
             Get in touch
           </motion.a>
 
-          <p className="mt-14 text-[0.6rem] tracking-caps uppercase sm:text-[0.65rem]" style={{ color: "oklch(1 0 0 / 45%)" }}>
+          <motion.p
+            className="mt-14 w-fit origin-left text-[0.6rem] tracking-caps uppercase sm:text-[0.65rem]"
+            style={{ color: "oklch(1 0 0 / 45%)" }}
+            whileHover={{ scale: 1.05 }}
+            transition={springTransition}
+          >
             More about my work
-          </p>
+          </motion.p>
           <p
             className="mt-3 flex gap-4 text-[0.6rem] tracking-caps uppercase sm:text-[0.65rem]"
             style={{ color: "oklch(1 0 0 / 45%)" }}
@@ -259,16 +271,21 @@ function Index() {
           </p>
 
           <div className="mt-16">
-            <AkLockup size="lg" tone="dark" />
+            <motion.div className="w-fit" whileHover={{ scale: 1.05 }} transition={springTransition}>
+              <AkLockup size="lg" tone="dark" />
+            </motion.div>
           </div>
-          <p
-            className="mt-6 text-[0.6rem] tracking-caps uppercase"
+          <motion.p
+            className="mt-6 w-fit origin-left text-[0.6rem] tracking-caps uppercase"
             style={{ color: "oklch(1 0 0 / 45%)" }}
+            whileHover={{ scale: 1.05 }}
+            transition={springTransition}
           >
             Motion Graphic Designer | Visual Storytelling
-          </p>
+          </motion.p>
         </div>
       </section>
     </main>
+    </MotionConfig>
   );
 }
