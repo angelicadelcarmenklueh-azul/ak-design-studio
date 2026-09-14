@@ -65,7 +65,7 @@ const how = [
   { word: "Vibrant", line: "Vibrant not just in color, but in sound." },
 ];
 
-const springTransition = { type: "spring", stiffness: 150, damping: 15 };
+const springTransition = { type: "spring" as const, stiffness: 150, damping: 15 };
 
 type ProofItem = (typeof proof)[number];
 
