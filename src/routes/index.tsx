@@ -123,62 +123,62 @@ function Index() {
           </motion.span>
         </header>
 
-        <motion.div
-          className="reveal mt-10 sm:mt-14"
-          whileHover={{ scale: 1.05 }}
-          transition={springTransition}
-        >
-          <MediaSlot
-            label="[VIDEO/REEL FILE — personal reel, autoplay, muted, loop]"
-            src={reelHeroVideo.url}
-            image={reelHeroPoster.url}
-            poster={reelHeroPoster.url}
-            alt="Cut-paper collage of bold organic shapes in pink, green, blue and yellow"
-            width={1600}
-            height={900}
-            ratio="16 / 9"
-            priority
-          />
-        </motion.div>
+        <div className="reveal mt-10 sm:mt-14">
+          <motion.div whileHover={{ scale: 1.05 }} transition={springTransition}>
+            <MediaSlot
+              label="[VIDEO/REEL FILE — personal reel, autoplay, muted, loop]"
+              src={reelHeroVideo.url}
+              image={reelHeroPoster.url}
+              poster={reelHeroPoster.url}
+              alt="Cut-paper collage of bold organic shapes in pink, green, blue and yellow"
+              width={1600}
+              height={900}
+              ratio="16 / 9"
+              priority
+            />
+          </motion.div>
+        </div>
 
-        <motion.p
-          className="reveal mt-8 max-w-3xl origin-left text-base leading-relaxed text-muted-foreground sm:text-lg"
-          whileHover={{ scale: 1.05 }}
-          transition={springTransition}
-        >
-          A mix of 2D and 3D animation, scored with an original soundtrack — composed by a music studio just for this piece, note for note. It's a small selection of the work I'm proudest of. But it's more than a portfolio: it's a reminder that change is good — that new chapters bring endless new things, and possibility. Rhythm, color, and substance — the way I like to tell every story.
-        </motion.p>
+        <div className="reveal mt-8 max-w-3xl">
+          <motion.p
+            className="origin-left text-base leading-relaxed text-muted-foreground sm:text-lg"
+            whileHover={{ scale: 1.05 }}
+            transition={springTransition}
+          >
+            A mix of 2D and 3D animation, scored with an original soundtrack — composed by a music studio just for this piece, note for note. It's a small selection of the work I'm proudest of. But it's more than a portfolio: it's a reminder that change is good — that new chapters bring endless new things, and possibility. Rhythm, color, and substance — the way I like to tell every story.
+          </motion.p>
+        </div>
 
-        <motion.h1
-          className="reveal mt-16 max-w-4xl origin-left text-[2rem] leading-[1.08] tracking-[-0.01em] text-balance sm:mt-20 sm:text-5xl md:text-6xl"
-          whileHover={{ scale: 1.05 }}
-          transition={springTransition}
-        >
-          I turn brand and product stories into short animations with rhythm,
-          colour, and substance.
-        </motion.h1>
+        <div className="reveal mt-16 max-w-4xl">
+          <motion.h1
+            className="origin-left text-[2rem] leading-[1.08] tracking-[-0.01em] text-balance sm:mt-20 sm:text-5xl md:text-6xl"
+            whileHover={{ scale: 1.05 }}
+            transition={springTransition}
+          >
+            I turn brand and product stories into short animations with rhythm,
+            colour, and substance.
+          </motion.h1>
+        </div>
       </section>
 
       {/* 2. WHO I AM */}
       <section className="mx-auto w-full max-w-6xl px-6 py-20 sm:px-10 md:py-28">
-        <motion.h2
-          className="display-bold inline-block origin-left text-3xl tracking-[0.01em] sm:text-4xl"
+        <motion.div
+          className="origin-left"
           whileHover={{ scale: 1.05 }}
           transition={springTransition}
         >
-          Who I am
-        </motion.h2>
-        <motion.p
-          className="mt-8 max-w-3xl origin-left text-xl leading-[1.45] font-normal tracking-[-0.005em] text-pretty sm:text-2xl md:text-3xl"
-          whileHover={{ scale: 1.05 }}
-          transition={springTransition}
-        >
-          Graphic designer with roots in art and illustration, specialized in motion graphics — from brand videos to interactive product animation, with a Master's degree in the same field. My path has taken me through Mexico, the United States, and Germany, each place shaping how I see color, rhythm, and story. Increasingly building with AI-assisted workflows.
-          <span className="block text-muted-foreground">
-            Currently open to new opportunities, in-house or freelance, with
-            teams who care about story as much as motion.
-          </span>
-        </motion.p>
+          <h2 className="display-bold inline-block text-3xl tracking-[0.01em] sm:text-4xl">
+            Who I am
+          </h2>
+          <p className="mt-8 max-w-3xl text-xl leading-[1.45] font-normal tracking-[-0.005em] text-pretty sm:text-2xl md:text-3xl">
+            Graphic designer with roots in art and illustration, specialized in motion graphics — from brand videos to interactive product animation, with a Master's degree in the same field. My path has taken me through Mexico, the United States, and Germany, each place shaping how I see color, rhythm, and story. Increasingly building with AI-assisted workflows.
+            <span className="block text-muted-foreground">
+              Currently open to new opportunities, in-house or freelance, with
+              teams who care about story as much as motion.
+            </span>
+          </p>
+        </motion.div>
       </section>
 
       {/* 3. PROOF */}
