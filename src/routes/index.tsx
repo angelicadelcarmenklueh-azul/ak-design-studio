@@ -10,6 +10,7 @@ import workFreelanceVideo from "@/assets/work-freelance.mp4.asset.json";
 import resumePdf from "@/assets/resume.pdf.asset.json";
 import workMonclerVideo from "@/assets/Moncler-sound-design.mp4.asset.json";
 import workSparkChainVideo from "@/assets/the-spark-chain.mp4.asset.json";
+import sparkChainCaseStudy from "@/assets/the-spark-chain-case-study.pdf.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -56,7 +57,7 @@ const proof = [
     title: "The SparkChain",
     lines: "A Master's assignment: turning a client brief into a short animated story — a single spark of curiosity moving through digital, geometric shapes before blooming into something organic, a tree taking root. Full brief, concepting, and storyboard in the case study.",
     wide: true,
-    caseStudyUrl: undefined as string | undefined,
+    caseStudyUrl: sparkChainCaseStudy.url as string | undefined,
   },
   {
     label: "[VIDEO OF MONCLER SOUND DESIGN]",
