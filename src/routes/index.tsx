@@ -290,7 +290,7 @@ function Index() {
             style={{ color: "oklch(1 0 0 / 45%)" }}
           >
              <div className="flex flex-wrap gap-x-8 gap-y-2">
-               <motion.a href="https://www.linkedin.com/in/angelica-klüh" target="_blank" rel="noopener noreferrer" className="hover:opacity-70" whileHover={{ scale: 1.05 }} transition={springTransition}>LinkedIn</motion.a>
+               <motion.a href="https://www.linkedin.com/in/angelica-del-carmen-klüh-346852265" target="_blank" rel="noopener noreferrer" className="hover:opacity-70" whileHover={{ scale: 1.05 }} transition={springTransition}>LinkedIn</motion.a>
                <motion.a href="https://vimeo.com/user167174522" target="_blank" rel="noopener noreferrer" className="hover:opacity-70" whileHover={{ scale: 1.05 }} transition={springTransition}>Vimeo</motion.a>
                <motion.a href={resumePdf.url} download target="_blank" rel="noopener noreferrer" className="hover:opacity-70" whileHover={{ scale: 1.05 }} transition={springTransition}>Résumé</motion.a>
              </div>
