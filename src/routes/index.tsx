@@ -266,7 +266,7 @@ function Index() {
 
           <motion.a
             href="mailto:angelica.klueh@gmail.com"
-            className="mt-10 inline-flex origin-left items-center gap-3 border-b pb-1 text-lg font-medium transition-opacity hover:opacity-60 sm:text-xl"
+            className="mt-10 inline-flex origin-left items-center gap-3 border-b pb-1 text-[2.25rem] font-medium transition-opacity hover:opacity-60 sm:text-[2.5rem]"
             style={{
               color: "var(--background)",
               borderColor: "oklch(1 0 0 / 40%)",
