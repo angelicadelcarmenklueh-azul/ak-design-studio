@@ -9,6 +9,7 @@ import workAnxietyVideo from "@/assets/work-anxiety.mp4.asset.json";
 import workFreelanceVideo from "@/assets/work-freelance.mp4.asset.json";
 import resumePdf from "@/assets/resume.pdf.asset.json";
 import workMonclerVideo from "@/assets/Moncler-sound-design.mp4.asset.json";
+import workSparkChainVideo from "@/assets/the-spark-chain.mp4.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -46,6 +47,16 @@ const proof = [
     alt: "Freelance client work reel",
     title: "Freelance Work",
     lines: "A reel of independent client work across several years — from directing the trailer, music, and social media for the Latin American Film Festival at Frankfurt's Film Museum, two years running, to animation for Continental, a logo animation for Deutsche Bahn, and live projections for art events at Kloster Eberbach.",
+  },
+  {
+    label: "[VIDEO OF THE SPARKCHAIN]",
+    src: workSparkChainVideo.url,
+    image: undefined,
+    alt: "The SparkChain animation project",
+    title: "The SparkChain",
+    lines: "A Master's assignment: turning a client brief into a short animated story — a single spark of curiosity moving through digital, geometric shapes before blooming into something organic, a tree taking root. Full brief, concepting, and storyboard in the case study.",
+    wide: true,
+    caseStudyUrl: undefined as string | undefined,
   },
   {
     label: "[VIDEO OF MONCLER SOUND DESIGN]",
@@ -93,6 +104,18 @@ function ProofCard({ item }: { item: ProofItem }) {
       >
         {item.title}
       </motion.h3>
+      {item.caseStudyUrl && (
+        <motion.a
+          href={item.caseStudyUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="ml-3 rounded-full border border-current px-3 py-1 text-xs uppercase tracking-caps opacity-70 hover:opacity-100"
+          whileHover={{ scale: 1.05 }}
+          transition={springTransition}
+        >
+          View case study
+        </motion.a>
+      )}
       <motion.p
         className="mt-2 origin-left text-[0.95rem] leading-relaxed text-muted-foreground text-pretty"
         whileHover={{ scale: 1.05 }}
