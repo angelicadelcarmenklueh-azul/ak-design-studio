@@ -277,24 +277,26 @@ function Index() {
             Get in touch
           </motion.a>
 
-          <motion.p
-            className="mt-14 w-fit origin-left text-[1.2rem] tracking-caps uppercase sm:text-[1.3rem]"
-            style={{ color: "oklch(1 0 0 / 45%)" }}
+          <motion.h3
+            className="display-bold mt-14 inline-block origin-left text-3xl tracking-[0.01em] sm:text-4xl"
+            style={{ color: "var(--background)" }}
             whileHover={{ scale: 1.05 }}
             transition={springTransition}
           >
             More about my work
-          </motion.p>
-          <p
-            className="mt-4 flex flex-wrap gap-x-8 gap-y-3 text-[1.2rem] tracking-caps uppercase sm:text-[1.3rem]"
+          </motion.h3>
+          <div
+            className="mt-4 flex flex-col gap-3 text-[1.2rem] tracking-caps uppercase sm:text-[1.3rem]"
             style={{ color: "oklch(1 0 0 / 45%)" }}
           >
-             <motion.a href="https://www.linkedin.com/in/angelica-klüh" target="_blank" rel="noopener noreferrer" className="hover:opacity-70" whileHover={{ scale: 1.05 }} transition={springTransition}>LinkedIn</motion.a>
-             <motion.a href="https://vimeo.com/user167174522" target="_blank" rel="noopener noreferrer" className="hover:opacity-70" whileHover={{ scale: 1.05 }} transition={springTransition}>Vimeo</motion.a>
-             <motion.a href={resumePdf.url} download target="_blank" rel="noopener noreferrer" className="hover:opacity-70" whileHover={{ scale: 1.05 }} transition={springTransition}>Résumé</motion.a>
-             <motion.a href="https://marketplace.atlassian.com/apps/1230544/spacecraft-theme-for-confluence-cloud-color-your-space?hosting=cloud&tab=overview" target="_blank" rel="noopener noreferrer" className="hover:opacity-70" whileHover={{ scale: 1.05 }} transition={springTransition}>Product Video Atlassian 1</motion.a>
-             <motion.a href="https://marketplace.atlassian.com/apps/1227739/didit-checklists-for-jira?hosting=cloud&tab=overview" target="_blank" rel="noopener noreferrer" className="hover:opacity-70" whileHover={{ scale: 1.05 }} transition={springTransition}>Product Video Atlassian 2</motion.a>
-          </p>
+             <div className="flex flex-wrap gap-x-8 gap-y-2">
+               <motion.a href="https://www.linkedin.com/in/angelica-klüh" target="_blank" rel="noopener noreferrer" className="hover:opacity-70" whileHover={{ scale: 1.05 }} transition={springTransition}>LinkedIn</motion.a>
+               <motion.a href="https://vimeo.com/user167174522" target="_blank" rel="noopener noreferrer" className="hover:opacity-70" whileHover={{ scale: 1.05 }} transition={springTransition}>Vimeo</motion.a>
+               <motion.a href={resumePdf.url} download target="_blank" rel="noopener noreferrer" className="hover:opacity-70" whileHover={{ scale: 1.05 }} transition={springTransition}>Résumé</motion.a>
+             </div>
+             <motion.a href="https://marketplace.atlassian.com/apps/1230544/spacecraft-theme-for-confluence-cloud-color-your-space?hosting=cloud&tab=overview" target="_blank" rel="noopener noreferrer" className="w-fit hover:opacity-70" whileHover={{ scale: 1.05 }} transition={springTransition}>Product Video Atlassian 1</motion.a>
+             <motion.a href="https://marketplace.atlassian.com/apps/1227739/didit-checklists-for-jira?hosting=cloud&tab=overview" target="_blank" rel="noopener noreferrer" className="w-fit hover:opacity-70" whileHover={{ scale: 1.05 }} transition={springTransition}>Product Video Atlassian 2</motion.a>
+          </div>
 
           <div className="mt-16">
             <motion.div className="w-fit" whileHover={{ scale: 1.05 }} transition={springTransition}>
