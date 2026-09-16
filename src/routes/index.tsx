@@ -277,14 +277,14 @@ function Index() {
             Get in touch
           </motion.a>
 
-          <motion.h3
-            className="display-bold mt-14 inline-block origin-left text-3xl tracking-[0.01em] sm:text-4xl"
-            style={{ color: "var(--background)" }}
-            whileHover={{ scale: 1.05 }}
-            transition={springTransition}
-          >
-            More about my work
-          </motion.h3>
+                      <motion.p
+              className="mt-14 block w-fit origin-left text-[1.2rem] font-bold tracking-caps uppercase sm:text-[1.3rem]"
+              style={{ color: "oklch(1 0 0 / 45%)" }}
+              whileHover={{ scale: 1.05 }}
+              transition={springTransition}
+            >
+              More about my work
+            </motion.p>
           <div
             className="mt-4 flex flex-col gap-3 text-[1.2rem] tracking-caps uppercase sm:text-[1.3rem]"
             style={{ color: "oklch(1 0 0 / 45%)" }}
