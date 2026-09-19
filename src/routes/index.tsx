@@ -42,7 +42,7 @@ const proof = [
     image: workAnxiety,
     alt: "Cut-paper collage of a calm figure surrounded by concentric coloured ripples",
     title: "Inner Self App",
-    lines: "A personal project I made for myself: an animation with an original voice-over, built for Inner Self, an app for anxiety support. No client brief, no deadline — just an idea I believed in, and the chance to give it real emotional weight.",
+    lines: "Designed and animated from scratch in just one afternoon. That was the challenge behind Inner Self App, a concept created for a Ramen motion design prompt. Working under pressure is one of the best ways to put your skills into practice and spark unexpected creative breakthroughs. A fast-paced, high-intensity exercise that brought a meaningful fictional app to life. Press play and check it out.",
   },
   {
     label: "[VIDEO OF FREELANCE WORK]",
