@@ -72,6 +72,7 @@ const soundDesign = [
     alt: "Moncler sound design project",
     title: "Moncler Sound Design",
     lines: "A retrospective pass on the mix: rebalancing dialogue and music, refining gain word by word, and layering in ambient storm textures to widen the soundstage. I shaped the sound design — music editing and final mix.",
+    wide: true,
     caseStudyUrl: monclerCaseStudy.url as string | undefined,
   },
   {
@@ -81,6 +82,7 @@ const soundDesign = [
     alt: "ESPN X NBA sound design project",
     title: "ESPN X NBA Sound Design",
     lines: "Layering in effects, modulating the voiceover, and cutting the music to hit every beat in exact sync with the picture — matching the same high energy ESPN and NBA wanted the video to carry.",
+    wide: true,
     caseStudyUrl: espnNbaCaseStudy.url as string | undefined,
   },
 ];
