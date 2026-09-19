@@ -8,7 +8,10 @@ import workAnxiety from "@/assets/work-anxiety.jpg";
 import workAnxietyVideo from "@/assets/work-anxiety.mp4.asset.json";
 import workFreelanceVideo from "@/assets/work-freelance.mp4.asset.json";
 import resumePdf from "@/assets/resume.pdf.asset.json";
-import workMonclerVideo from "@/assets/Moncler-sound-design.mp4.asset.json";
+import workMonclerVideo from "@/assets/Moncler-Sound-design-2.mp4.asset.json";
+import workEspnNbaVideo from "@/assets/ESPN_X_NBA-Sound-design.mp4.asset.json";
+import monclerCaseStudy from "@/assets/moncler-sound-design-case-study.pdf.asset.json";
+import espnNbaCaseStudy from "@/assets/espn-x-nba-sound-design-case-study.pdf.asset.json";
 import workSparkChainVideo from "@/assets/the-spark-chain.mp4.asset.json";
 import sparkChainCaseStudy from "@/assets/the-spark-chain-case-study.pdf.asset.json";
 
@@ -59,14 +62,26 @@ const proof = [
     wide: true,
     caseStudyUrl: sparkChainCaseStudy.url as string | undefined,
   },
+];
+
+const soundDesign = [
   {
     label: "[VIDEO OF MONCLER SOUND DESIGN]",
     src: workMonclerVideo.url,
     image: undefined,
     alt: "Moncler sound design project",
     title: "Moncler Sound Design",
-    lines: "Working from a pre-recorded voiceover and licensed production music, I shaped the sound design — music editing and final mix.",
-    wide: true,
+    lines: "A retrospective pass on the mix: rebalancing dialogue and music, refining gain word by word, and layering in ambient storm textures to widen the soundstage. I shaped the sound design — music editing and final mix.",
+    caseStudyUrl: monclerCaseStudy.url as string | undefined,
+  },
+  {
+    label: "[VIDEO OF ESPN X NBA SOUND DESIGN]",
+    src: workEspnNbaVideo.url,
+    image: undefined,
+    alt: "ESPN X NBA sound design project",
+    title: "ESPN X NBA Sound Design",
+    lines: "Layering in effects, modulating the voiceover, and cutting the music to hit every beat in exact sync with the picture — matching the same high energy ESPN and NBA wanted the video to carry.",
+    caseStudyUrl: espnNbaCaseStudy.url as string | undefined,
   },
 ];
 
@@ -216,6 +231,22 @@ function Index() {
         </motion.h2>
         <div className="mt-10 grid gap-12 md:grid-cols-2 md:gap-10">
           {proof.map((item) => (
+            <ProofCard key={item.title} item={item} />
+          ))}
+        </div>
+      </section>
+
+      {/* 3b. SOUND DESIGN */}
+      <section className="mx-auto w-full max-w-6xl px-6 py-20 sm:px-10 md:py-28">
+        <motion.h2
+          className="display-bold inline-block origin-left text-3xl tracking-[0.01em] sm:text-4xl"
+          whileHover={{ scale: 1.05 }}
+          transition={springTransition}
+        >
+          Sound Design
+        </motion.h2>
+        <div className="mt-10 grid gap-12 md:grid-cols-2 md:gap-10">
+          {soundDesign.map((item) => (
             <ProofCard key={item.title} item={item} />
           ))}
         </div>
