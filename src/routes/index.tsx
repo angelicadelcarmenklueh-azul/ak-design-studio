@@ -93,7 +93,16 @@ const how = [
 
 const springTransition = { type: "spring" as const, stiffness: 150, damping: 15 };
 
-type ProofItem = (typeof proof)[number];
+type ProofItem = {
+  label: string;
+  src?: string;
+  image?: string;
+  alt: string;
+  title: string;
+  lines: string;
+  wide?: boolean;
+  caseStudyUrl?: string;
+};
 
 function ProofCard({ item }: { item: ProofItem }) {
   return (
