@@ -66,16 +66,6 @@ const proof = [
 
 const soundDesign = [
   {
-    label: "[VIDEO OF MONCLER SOUND DESIGN]",
-    src: workMonclerVideo.url,
-    image: undefined,
-    alt: "Moncler sound design project",
-    title: "Moncler Sound Design",
-    lines: "A retrospective pass on the mix: rebalancing dialogue and music, refining gain word by word, and layering in ambient storm textures to widen the soundstage. I shaped the sound design — music editing and final mix.",
-    wide: true,
-    caseStudyUrl: monclerCaseStudy.url as string | undefined,
-  },
-  {
     label: "[VIDEO OF ESPN X NBA SOUND DESIGN]",
     src: workEspnNbaVideo.url,
     image: undefined,
@@ -84,6 +74,16 @@ const soundDesign = [
     lines: "Layering in effects, modulating the voiceover, and cutting the music to hit every beat in exact sync with the picture — matching the same high energy ESPN and NBA wanted the video to carry.",
     wide: true,
     caseStudyUrl: espnNbaCaseStudy.url as string | undefined,
+  },
+  {
+    label: "[VIDEO OF MONCLER SOUND DESIGN]",
+    src: workMonclerVideo.url,
+    image: undefined,
+    alt: "Moncler sound design project",
+    title: "Moncler Sound Design",
+    lines: "A retrospective pass on the mix: rebalancing dialogue and music, refining gain word by word, and layering in ambient storm textures to widen the soundstage. I shaped the sound design — music editing and final mix.",
+    wide: true,
+    caseStudyUrl: monclerCaseStudy.url as string | undefined,
   },
 ];
 
