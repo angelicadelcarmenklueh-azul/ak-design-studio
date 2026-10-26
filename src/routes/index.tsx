@@ -57,13 +57,12 @@ const proof: ProofItem[] = [
     wide: true,
   },
   {
-    label: "[VIDEO OF THE SPARKCHAIN]",
-    src: workSparkChainVideo.url,
-    alt: "The SparkChain animation project",
-    title: "The SparkChain",
-    lines: "Turning a client brief into a short animated story — a single spark of curiosity moving through digital, geometric shapes before blooming into something organic, a tree taking root. Full brief, concepting, and storyboard in the case study.",
+    label: "[VIDEO OF FREELANCE WORK]",
+    src: workFreelanceVideo.url,
+    alt: "Freelance client work reel",
+    title: "Freelance Work",
+    lines: "A reel of independent client work across several years — from directing the trailer, music, and social media for the Latin American Film Festival at Frankfurt's Film Museum, two years running, to animation for Continental, a logo animation for Deutsche Bahn, and live projections for art events at Kloster Eberbach.",
     wide: true,
-    caseStudyUrl: sparkChainCaseStudy.url,
   },
   {
     label: "[VIDEO OF ESPN X NBA SOUND DESIGN]",
@@ -93,12 +92,13 @@ const proof: ProofItem[] = [
     wide: true,
   },
   {
-    label: "[VIDEO OF FREELANCE WORK]",
-    src: workFreelanceVideo.url,
-    alt: "Freelance client work reel",
-    title: "Freelance Work",
-    lines: "A reel of independent client work across several years — from directing the trailer, music, and social media for the Latin American Film Festival at Frankfurt's Film Museum, two years running, to animation for Continental, a logo animation for Deutsche Bahn, and live projections for art events at Kloster Eberbach.",
+    label: "[VIDEO OF THE SPARKCHAIN]",
+    src: workSparkChainVideo.url,
+    alt: "The SparkChain animation project",
+    title: "The SparkChain",
+    lines: "Turning a client brief into a short animated story — a single spark of curiosity moving through digital, geometric shapes before blooming into something organic, a tree taking root. Full brief, concepting, and storyboard in the case study.",
     wide: true,
+    caseStudyUrl: sparkChainCaseStudy.url,
   },
 ];
 
