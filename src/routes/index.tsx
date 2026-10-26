@@ -7,7 +7,7 @@ import reelHeroVideo from "@/assets/reel-hero.mp4.asset.json";
 import workAnxiety from "@/assets/work-anxiety.jpg";
 import workAnxietyVideo from "@/assets/work-anxiety.mp4.asset.json";
 import workFreelanceVideo from "@/assets/work-freelance.mp4.asset.json";
-import resumePdf from "@/assets/resume.pdf.asset.json";
+import resumePdf from "@/assets/angelica-klueh-resume.pdf.asset.json";
 import workMonclerVideo from "@/assets/Moncler-Sound-design-2.mp4.asset.json";
 import workEspnNbaVideo from "@/assets/ESPN_X_NBA-Sound-design.mp4.asset.json";
 import monclerCaseStudy from "@/assets/moncler-sound-design-case-study.pdf.asset.json";
