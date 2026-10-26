@@ -14,6 +14,9 @@ import monclerCaseStudy from "@/assets/moncler-sound-design-case-study.pdf.asset
 import espnNbaCaseStudy from "@/assets/espn-x-nba-sound-design-case-study.pdf.asset.json";
 import workSparkChainVideo from "@/assets/the-spark-chain.mp4.asset.json";
 import sparkChainCaseStudy from "@/assets/the-spark-chain-case-study.pdf.asset.json";
+import youArePerfectVideo from "@/assets/You-are-perfect-as-you-are.mp4.asset.json";
+import youArePerfectCaseStudy from "@/assets/You-are-perfect-as-you-are-case-study.pdf.asset.json";
+import spacecraftVideo from "@/assets/spacecraft-product-video.mp4.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -35,7 +38,51 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const proof = [
+const proof: ProofItem[] = [
+  {
+    label: "[VIDEO OF YOU ARE PERFECT AS YOU ARE]",
+    src: youArePerfectVideo.url,
+    alt: "You are perfect as you are motion design piece",
+    title: "You Are Perfect As You Are",
+    lines: "A motion design piece about transformation, neurodiversity and empathy.",
+    wide: true,
+    caseStudyUrl: youArePerfectCaseStudy.url,
+  },
+  {
+    label: "[VIDEO OF SPACECRAFT PRODUCT VIDEO]",
+    src: spacecraftVideo.url,
+    alt: "Spacecraft product video for the Atlassian Marketplace",
+    title: "Spacecraft Product Video",
+    lines: "Product video created for the Spacecraft app on the Atlassian Marketplace.",
+    wide: true,
+  },
+  {
+    label: "[VIDEO OF THE SPARKCHAIN]",
+    src: workSparkChainVideo.url,
+    alt: "The SparkChain animation project",
+    title: "The SparkChain",
+    lines: "Turning a client brief into a short animated story — a single spark of curiosity moving through digital, geometric shapes before blooming into something organic, a tree taking root. Full brief, concepting, and storyboard in the case study.",
+    wide: true,
+    caseStudyUrl: sparkChainCaseStudy.url,
+  },
+  {
+    label: "[VIDEO OF ESPN X NBA SOUND DESIGN]",
+    src: workEspnNbaVideo.url,
+    alt: "ESPN X NBA sound design project",
+    title: "ESPN X NBA Sound Design",
+    lines: "Layering in effects, modulating the voiceover, and cutting the music to hit every beat in exact sync with the picture — matching the same high energy ESPN and NBA wanted the video to carry.",
+    wide: true,
+    caseStudyUrl: espnNbaCaseStudy.url,
+  },
+  {
+    label: "[VIDEO OF MONCLER SOUND DESIGN]",
+    src: workMonclerVideo.url,
+    alt: "Moncler sound design project",
+    title: "Moncler Sound Design",
+    lines: "A retrospective pass on the mix: rebalancing dialogue and music, refining gain word by word, and layering in ambient storm textures to widen the soundstage. I shaped the sound design — music editing and final mix.",
+    wide: true,
+    caseStudyUrl: monclerCaseStudy.url,
+  },
   {
     label: "[VIDEO OF INNER SELF APP]",
     src: workAnxietyVideo.url,
@@ -43,47 +90,15 @@ const proof = [
     alt: "Cut-paper collage of a calm figure surrounded by concentric coloured ripples",
     title: "Inner Self App",
     lines: "Designed and animated from scratch in just one afternoon. That was the challenge behind Inner Self App, a concept created for a Ramen motion design prompt. Working under pressure is one of the best ways to put your skills into practice and spark unexpected creative breakthroughs. A fast-paced, high-intensity exercise that brought a meaningful fictional app to life. Press play and check it out.",
+    wide: true,
   },
   {
     label: "[VIDEO OF FREELANCE WORK]",
     src: workFreelanceVideo.url,
-    image: undefined,
     alt: "Freelance client work reel",
     title: "Freelance Work",
     lines: "A reel of independent client work across several years — from directing the trailer, music, and social media for the Latin American Film Festival at Frankfurt's Film Museum, two years running, to animation for Continental, a logo animation for Deutsche Bahn, and live projections for art events at Kloster Eberbach.",
-  },
-  {
-    label: "[VIDEO OF THE SPARKCHAIN]",
-    src: workSparkChainVideo.url,
-    image: undefined,
-    alt: "The SparkChain animation project",
-    title: "The SparkChain",
-    lines: "Turning a client brief into a short animated story — a single spark of curiosity moving through digital, geometric shapes before blooming into something organic, a tree taking root. Full brief, concepting, and storyboard in the case study.",
     wide: true,
-    caseStudyUrl: sparkChainCaseStudy.url as string | undefined,
-  },
-];
-
-const soundDesign = [
-  {
-    label: "[VIDEO OF ESPN X NBA SOUND DESIGN]",
-    src: workEspnNbaVideo.url,
-    image: undefined,
-    alt: "ESPN X NBA sound design project",
-    title: "ESPN X NBA Sound Design",
-    lines: "Layering in effects, modulating the voiceover, and cutting the music to hit every beat in exact sync with the picture — matching the same high energy ESPN and NBA wanted the video to carry.",
-    wide: true,
-    caseStudyUrl: espnNbaCaseStudy.url as string | undefined,
-  },
-  {
-    label: "[VIDEO OF MONCLER SOUND DESIGN]",
-    src: workMonclerVideo.url,
-    image: undefined,
-    alt: "Moncler sound design project",
-    title: "Moncler Sound Design",
-    lines: "A retrospective pass on the mix: rebalancing dialogue and music, refining gain word by word, and layering in ambient storm textures to widen the soundstage. I shaped the sound design — music editing and final mix.",
-    wide: true,
-    caseStudyUrl: monclerCaseStudy.url as string | undefined,
   },
 ];
 
@@ -195,7 +210,7 @@ function Index() {
             whileHover={{ scale: 1.05 }}
             transition={springTransition}
           >
-            A mix of 2D and 3D animation, scored with an original soundtrack — composed by a music studio just for this piece, note for note. It's a small selection of the work I'm proudest of. But it's more than a portfolio: it's a reminder that change is good — that new chapters bring endless new things, and possibility. Rhythm, color, and substance — the way I like to tell every story.
+            A mix of 2D and 3D animation, scored with an original soundtrack — It's a small selection of the work I'm proudest of. But it's more than a portfolio: it's a reminder that change is good — that new chapters bring endless new things, and possibility. Rhythm, color, and substance — the way I like to tell every story.
           </motion.p>
         </div>
 
@@ -238,26 +253,10 @@ function Index() {
           whileHover={{ scale: 1.05 }}
           transition={springTransition}
         >
-          Proof
+          Projects
         </motion.h2>
         <div className="mt-10 grid gap-12 md:grid-cols-2 md:gap-10">
           {proof.map((item) => (
-            <ProofCard key={item.title} item={item} />
-          ))}
-        </div>
-      </section>
-
-      {/* 3b. SOUND DESIGN */}
-      <section className="mx-auto w-full max-w-6xl px-6 py-20 sm:px-10 md:py-28">
-        <motion.h2
-          className="display-bold inline-block origin-left text-3xl tracking-[0.01em] sm:text-4xl"
-          whileHover={{ scale: 1.05 }}
-          transition={springTransition}
-        >
-          Sound Design
-        </motion.h2>
-        <div className="mt-10 grid gap-12 md:grid-cols-2 md:gap-10">
-          {soundDesign.map((item) => (
             <ProofCard key={item.title} item={item} />
           ))}
         </div>
